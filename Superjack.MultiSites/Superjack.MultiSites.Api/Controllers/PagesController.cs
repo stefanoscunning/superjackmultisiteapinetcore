@@ -90,7 +90,7 @@ namespace Superjack.MultiSites.Api.Controllers
 
         return Ok(itemDtos);
       }
-      catch (Exception ex)
+      catch
       {
 
         return BadRequest();

@@ -11,6 +11,7 @@ namespace Superjack.MultiSites.Api.Services
   {
     IEnumerable<Block> GetAll();
     Block GetById(long id);
+    Block GetByUuid(string uuid);
     Block Create(Block item);
     void Update(Block newitem);
     void Delete(long id);
@@ -36,6 +37,11 @@ namespace Superjack.MultiSites.Api.Services
       return _context.Blocks.Find(id);
     }
 
+    public Block GetByUuid(string uuid)
+    {
+      return _context.Blocks.Where(x => x.Uuid == Guid.Parse(uuid)).FirstOrDefault();
+    }
+
     public Block Create(Block item)
     {
 
@@ -48,7 +54,6 @@ namespace Superjack.MultiSites.Api.Services
     public void Update(Block newitem)
     {
       var item = _context.Blocks.Find(newitem.Id);
-
 
       item.BlockType = newitem.BlockType;
       item.CanHaveChildren = newitem.CanHaveChildren;

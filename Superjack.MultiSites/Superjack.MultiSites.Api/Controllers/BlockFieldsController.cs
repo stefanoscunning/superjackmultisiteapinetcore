@@ -101,6 +101,15 @@ namespace Superjack.MultiSites.Api.Controllers
       return Ok();
     }
 
+    [HttpDelete]
+    [Route("~/blockfields/uuid/{uuid}")]
+    public IActionResult DeleteByUuid(string uuid)
+    {
+      var item = _service.GetByUuid(uuid);
+      return Delete(item.Id);
+
+    }
+
 
 
   }

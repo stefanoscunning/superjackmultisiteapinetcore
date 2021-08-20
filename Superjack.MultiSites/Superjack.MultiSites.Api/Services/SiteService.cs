@@ -14,6 +14,7 @@ namespace Superjack.MultiSites.Api.Services
     Task<IEnumerable<Site>> GetAllAsync();
     IEnumerable<Site> GetAll();
     Site GetById(long id);
+    Site GetByUuid(string uuid);
     Site Create(Site item);
     void Update(Site newitem);
     void Delete(long id);
@@ -42,6 +43,11 @@ namespace Superjack.MultiSites.Api.Services
     public Site GetById(long id)
     {
       return _context.Sites.Find(id);
+    }
+
+    public Site GetByUuid(string uuid)
+    {
+      return _context.Sites.Where(x=>x.Uuid==Guid.Parse(uuid)).FirstOrDefault();
     }
 
     public Site Create(Site item)

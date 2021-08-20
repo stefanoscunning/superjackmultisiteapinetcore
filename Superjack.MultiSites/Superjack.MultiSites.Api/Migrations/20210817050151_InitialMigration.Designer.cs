@@ -10,15 +10,15 @@ using Superjack.MultiSites.Api.DataAccess;
 namespace Superjack.MultiSites.Api.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20210329211901_InitialCreate")]
-    partial class InitialCreate
+    [Migration("20210817050151_InitialMigration")]
+    partial class InitialMigration
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
-                .HasAnnotation("ProductVersion", "5.0.3")
+                .HasAnnotation("ProductVersion", "5.0.9")
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
             modelBuilder.Entity("Superjack.MultiSites.Api.DataAccess.Block", b =>
@@ -55,6 +55,10 @@ namespace Superjack.MultiSites.Api.Migrations
                         .HasColumnType("nvarchar(max)")
                         .HasColumnName("Title");
 
+                    b.Property<Guid>("Uuid")
+                        .HasColumnType("uniqueidentifier")
+                        .HasColumnName("Uuid");
+
                     b.HasKey("Id");
 
                     b.ToTable("Blocks");
@@ -65,350 +69,385 @@ namespace Superjack.MultiSites.Api.Migrations
                             Id = 1L,
                             BlockType = "columnContainer",
                             CanHaveChildren = true,
-                            DateCreated = new DateTime(2021, 3, 29, 22, 18, 58, 913, DateTimeKind.Local).AddTicks(7682),
-                            DateModified = new DateTime(2021, 3, 29, 22, 18, 58, 913, DateTimeKind.Local).AddTicks(9469),
+                            DateCreated = new DateTime(2021, 8, 17, 6, 1, 50, 696, DateTimeKind.Local).AddTicks(2648),
+                            DateModified = new DateTime(2021, 8, 17, 6, 1, 50, 696, DateTimeKind.Local).AddTicks(3032),
                             ParentId = 0L,
-                            Title = "Columns"
+                            Title = "Columns",
+                            Uuid = new Guid("a34e1081-f366-47e6-bc82-c36ccb75bf4e")
                         },
                         new
                         {
                             Id = 2L,
                             BlockType = "button",
                             CanHaveChildren = false,
-                            DateCreated = new DateTime(2021, 3, 29, 22, 18, 58, 914, DateTimeKind.Local).AddTicks(5429),
-                            DateModified = new DateTime(2021, 3, 29, 22, 18, 58, 914, DateTimeKind.Local).AddTicks(5498),
+                            DateCreated = new DateTime(2021, 8, 17, 6, 1, 50, 696, DateTimeKind.Local).AddTicks(4274),
+                            DateModified = new DateTime(2021, 8, 17, 6, 1, 50, 696, DateTimeKind.Local).AddTicks(4289),
                             ParentId = 0L,
-                            Title = "Button"
+                            Title = "Button",
+                            Uuid = new Guid("79d5e8db-1a56-476a-a4d8-c1a092a9e203")
                         },
                         new
                         {
                             Id = 3L,
                             BlockType = "checkbox",
                             CanHaveChildren = false,
-                            DateCreated = new DateTime(2021, 3, 29, 22, 18, 58, 914, DateTimeKind.Local).AddTicks(5511),
-                            DateModified = new DateTime(2021, 3, 29, 22, 18, 58, 914, DateTimeKind.Local).AddTicks(5519),
+                            DateCreated = new DateTime(2021, 8, 17, 6, 1, 50, 696, DateTimeKind.Local).AddTicks(4294),
+                            DateModified = new DateTime(2021, 8, 17, 6, 1, 50, 696, DateTimeKind.Local).AddTicks(4297),
                             ParentId = 0L,
-                            Title = "Checkbox"
+                            Title = "Checkbox",
+                            Uuid = new Guid("9d5a2498-d7a2-4908-ae72-7a022f1970f4")
                         },
                         new
                         {
                             Id = 4L,
                             BlockType = "checklist",
                             CanHaveChildren = false,
-                            DateCreated = new DateTime(2021, 3, 29, 22, 18, 58, 914, DateTimeKind.Local).AddTicks(5528),
-                            DateModified = new DateTime(2021, 3, 29, 22, 18, 58, 914, DateTimeKind.Local).AddTicks(5536),
+                            DateCreated = new DateTime(2021, 8, 17, 6, 1, 50, 696, DateTimeKind.Local).AddTicks(4300),
+                            DateModified = new DateTime(2021, 8, 17, 6, 1, 50, 696, DateTimeKind.Local).AddTicks(4303),
                             ParentId = 0L,
-                            Title = "Checklist"
+                            Title = "Checklist",
+                            Uuid = new Guid("4e0da359-e8dc-41ad-879f-2290a83a8adb")
                         },
                         new
                         {
                             Id = 5L,
                             BlockType = "dataListGroup",
                             CanHaveChildren = false,
-                            DateCreated = new DateTime(2021, 3, 29, 22, 18, 58, 914, DateTimeKind.Local).AddTicks(5545),
-                            DateModified = new DateTime(2021, 3, 29, 22, 18, 58, 914, DateTimeKind.Local).AddTicks(5553),
+                            DateCreated = new DateTime(2021, 8, 17, 6, 1, 50, 696, DateTimeKind.Local).AddTicks(4320),
+                            DateModified = new DateTime(2021, 8, 17, 6, 1, 50, 696, DateTimeKind.Local).AddTicks(4322),
                             ParentId = 0L,
-                            Title = "Data List Group"
+                            Title = "Data List Group",
+                            Uuid = new Guid("6ba04336-662d-4d79-b5dc-d8aedb021a85")
                         },
                         new
                         {
                             Id = 6L,
                             BlockType = "datePicker",
                             CanHaveChildren = false,
-                            DateCreated = new DateTime(2021, 3, 29, 22, 18, 58, 914, DateTimeKind.Local).AddTicks(5563),
-                            DateModified = new DateTime(2021, 3, 29, 22, 18, 58, 914, DateTimeKind.Local).AddTicks(5571),
+                            DateCreated = new DateTime(2021, 8, 17, 6, 1, 50, 696, DateTimeKind.Local).AddTicks(4327),
+                            DateModified = new DateTime(2021, 8, 17, 6, 1, 50, 696, DateTimeKind.Local).AddTicks(4329),
                             ParentId = 0L,
-                            Title = "Date Picker"
+                            Title = "Date Picker",
+                            Uuid = new Guid("f58ffd9d-e287-49fa-b7b3-0bc24e77196d")
                         },
                         new
                         {
                             Id = 7L,
                             BlockType = "divider",
                             CanHaveChildren = false,
-                            DateCreated = new DateTime(2021, 3, 29, 22, 18, 58, 914, DateTimeKind.Local).AddTicks(5580),
-                            DateModified = new DateTime(2021, 3, 29, 22, 18, 58, 914, DateTimeKind.Local).AddTicks(5588),
+                            DateCreated = new DateTime(2021, 8, 17, 6, 1, 50, 696, DateTimeKind.Local).AddTicks(4333),
+                            DateModified = new DateTime(2021, 8, 17, 6, 1, 50, 696, DateTimeKind.Local).AddTicks(4336),
                             ParentId = 0L,
-                            Title = "Divider"
+                            Title = "Divider",
+                            Uuid = new Guid("25c1244a-dd67-4611-aa96-31c5b490bdc4")
                         },
                         new
                         {
                             Id = 8L,
                             BlockType = "dropDown",
                             CanHaveChildren = false,
-                            DateCreated = new DateTime(2021, 3, 29, 22, 18, 58, 914, DateTimeKind.Local).AddTicks(5597),
-                            DateModified = new DateTime(2021, 3, 29, 22, 18, 58, 914, DateTimeKind.Local).AddTicks(5605),
+                            DateCreated = new DateTime(2021, 8, 17, 6, 1, 50, 696, DateTimeKind.Local).AddTicks(4340),
+                            DateModified = new DateTime(2021, 8, 17, 6, 1, 50, 696, DateTimeKind.Local).AddTicks(4343),
                             ParentId = 0L,
-                            Title = "Drop-down"
+                            Title = "Drop-down",
+                            Uuid = new Guid("76f34739-4eb0-4c7c-b7a2-69e8471ae9f3")
                         },
                         new
                         {
                             Id = 9L,
                             BlockType = "editableTable",
                             CanHaveChildren = false,
-                            DateCreated = new DateTime(2021, 3, 29, 22, 18, 58, 914, DateTimeKind.Local).AddTicks(5615),
-                            DateModified = new DateTime(2021, 3, 29, 22, 18, 58, 914, DateTimeKind.Local).AddTicks(5622),
+                            DateCreated = new DateTime(2021, 8, 17, 6, 1, 50, 696, DateTimeKind.Local).AddTicks(4347),
+                            DateModified = new DateTime(2021, 8, 17, 6, 1, 50, 696, DateTimeKind.Local).AddTicks(4349),
                             ParentId = 0L,
-                            Title = "Editable Table"
+                            Title = "Editable Table",
+                            Uuid = new Guid("55d8109c-568d-44b3-8f2a-52fb18c915ca")
                         },
                         new
                         {
                             Id = 10L,
                             BlockType = "fileUpload",
                             CanHaveChildren = false,
-                            DateCreated = new DateTime(2021, 3, 29, 22, 18, 58, 914, DateTimeKind.Local).AddTicks(5631),
-                            DateModified = new DateTime(2021, 3, 29, 22, 18, 58, 914, DateTimeKind.Local).AddTicks(5639),
+                            DateCreated = new DateTime(2021, 8, 17, 6, 1, 50, 696, DateTimeKind.Local).AddTicks(4353),
+                            DateModified = new DateTime(2021, 8, 17, 6, 1, 50, 696, DateTimeKind.Local).AddTicks(4356),
                             ParentId = 0L,
-                            Title = "File Upload"
+                            Title = "File Upload",
+                            Uuid = new Guid("689bbf97-a547-402b-9378-f3d8b6d3f780")
                         },
                         new
                         {
                             Id = 11L,
                             BlockType = "heading",
                             CanHaveChildren = false,
-                            DateCreated = new DateTime(2021, 3, 29, 22, 18, 58, 914, DateTimeKind.Local).AddTicks(5648),
-                            DateModified = new DateTime(2021, 3, 29, 22, 18, 58, 914, DateTimeKind.Local).AddTicks(5655),
+                            DateCreated = new DateTime(2021, 8, 17, 6, 1, 50, 696, DateTimeKind.Local).AddTicks(4363),
+                            DateModified = new DateTime(2021, 8, 17, 6, 1, 50, 696, DateTimeKind.Local).AddTicks(4366),
                             ParentId = 0L,
-                            Title = "heading"
+                            Title = "heading",
+                            Uuid = new Guid("408df0c0-8eed-4584-9497-fd1151d8d898")
                         },
                         new
                         {
                             Id = 12L,
                             BlockType = "subHeading",
                             CanHaveChildren = false,
-                            DateCreated = new DateTime(2021, 3, 29, 22, 18, 58, 914, DateTimeKind.Local).AddTicks(5664),
-                            DateModified = new DateTime(2021, 3, 29, 22, 18, 58, 914, DateTimeKind.Local).AddTicks(5672),
+                            DateCreated = new DateTime(2021, 8, 17, 6, 1, 50, 696, DateTimeKind.Local).AddTicks(4369),
+                            DateModified = new DateTime(2021, 8, 17, 6, 1, 50, 696, DateTimeKind.Local).AddTicks(4372),
                             ParentId = 0L,
-                            Title = "Sub-heading"
+                            Title = "Sub-heading",
+                            Uuid = new Guid("67856401-6a6c-4935-be7a-a105a6bb265b")
                         },
                         new
                         {
                             Id = 13L,
                             BlockType = "listGroup",
                             CanHaveChildren = false,
-                            DateCreated = new DateTime(2021, 3, 29, 22, 18, 58, 914, DateTimeKind.Local).AddTicks(5681),
-                            DateModified = new DateTime(2021, 3, 29, 22, 18, 58, 914, DateTimeKind.Local).AddTicks(5689),
+                            DateCreated = new DateTime(2021, 8, 17, 6, 1, 50, 696, DateTimeKind.Local).AddTicks(4379),
+                            DateModified = new DateTime(2021, 8, 17, 6, 1, 50, 696, DateTimeKind.Local).AddTicks(4382),
                             ParentId = 0L,
-                            Title = "List Group"
+                            Title = "List Group",
+                            Uuid = new Guid("cb6290be-aea6-4748-89e1-343a80b68303")
                         },
                         new
                         {
                             Id = 14L,
                             BlockType = "multiLineTextbox",
                             CanHaveChildren = false,
-                            DateCreated = new DateTime(2021, 3, 29, 22, 18, 58, 914, DateTimeKind.Local).AddTicks(5697),
-                            DateModified = new DateTime(2021, 3, 29, 22, 18, 58, 914, DateTimeKind.Local).AddTicks(5706),
+                            DateCreated = new DateTime(2021, 8, 17, 6, 1, 50, 696, DateTimeKind.Local).AddTicks(4386),
+                            DateModified = new DateTime(2021, 8, 17, 6, 1, 50, 696, DateTimeKind.Local).AddTicks(4388),
                             ParentId = 0L,
-                            Title = "Multi-line Textbox"
+                            Title = "Multi-line Textbox",
+                            Uuid = new Guid("62dab29b-a81f-4c82-b545-f699565f99f4")
                         },
                         new
                         {
                             Id = 15L,
                             BlockType = "radioGroup",
                             CanHaveChildren = false,
-                            DateCreated = new DateTime(2021, 3, 29, 22, 18, 58, 914, DateTimeKind.Local).AddTicks(5715),
-                            DateModified = new DateTime(2021, 3, 29, 22, 18, 58, 914, DateTimeKind.Local).AddTicks(5723),
+                            DateCreated = new DateTime(2021, 8, 17, 6, 1, 50, 696, DateTimeKind.Local).AddTicks(4393),
+                            DateModified = new DateTime(2021, 8, 17, 6, 1, 50, 696, DateTimeKind.Local).AddTicks(4395),
                             ParentId = 0L,
-                            Title = "Radio Group"
+                            Title = "Radio Group",
+                            Uuid = new Guid("a78921dc-c657-450b-9552-96dd7fa93198")
                         },
                         new
                         {
                             Id = 16L,
                             BlockType = "signature",
                             CanHaveChildren = false,
-                            DateCreated = new DateTime(2021, 3, 29, 22, 18, 58, 914, DateTimeKind.Local).AddTicks(5799),
-                            DateModified = new DateTime(2021, 3, 29, 22, 18, 58, 914, DateTimeKind.Local).AddTicks(5810),
+                            DateCreated = new DateTime(2021, 8, 17, 6, 1, 50, 696, DateTimeKind.Local).AddTicks(4399),
+                            DateModified = new DateTime(2021, 8, 17, 6, 1, 50, 696, DateTimeKind.Local).AddTicks(4402),
                             ParentId = 0L,
-                            Title = "Signature"
+                            Title = "Signature",
+                            Uuid = new Guid("d3a2900b-9f9d-4094-9756-b37e74421c77")
                         },
                         new
                         {
                             Id = 17L,
                             BlockType = "table",
                             CanHaveChildren = false,
-                            DateCreated = new DateTime(2021, 3, 29, 22, 18, 58, 914, DateTimeKind.Local).AddTicks(5819),
-                            DateModified = new DateTime(2021, 3, 29, 22, 18, 58, 914, DateTimeKind.Local).AddTicks(5826),
+                            DateCreated = new DateTime(2021, 8, 17, 6, 1, 50, 696, DateTimeKind.Local).AddTicks(4406),
+                            DateModified = new DateTime(2021, 8, 17, 6, 1, 50, 696, DateTimeKind.Local).AddTicks(4409),
                             ParentId = 0L,
-                            Title = "Table"
+                            Title = "Table",
+                            Uuid = new Guid("2cf0f106-a6a1-4c65-b0da-59c428d09244")
                         },
                         new
                         {
                             Id = 18L,
                             BlockType = "textBlock",
                             CanHaveChildren = false,
-                            DateCreated = new DateTime(2021, 3, 29, 22, 18, 58, 914, DateTimeKind.Local).AddTicks(5835),
-                            DateModified = new DateTime(2021, 3, 29, 22, 18, 58, 914, DateTimeKind.Local).AddTicks(5843),
+                            DateCreated = new DateTime(2021, 8, 17, 6, 1, 50, 696, DateTimeKind.Local).AddTicks(4412),
+                            DateModified = new DateTime(2021, 8, 17, 6, 1, 50, 696, DateTimeKind.Local).AddTicks(4415),
                             ParentId = 0L,
-                            Title = "Text Block"
+                            Title = "Text Block",
+                            Uuid = new Guid("1e1372a6-8721-4744-a0bd-ab12db04a97f")
                         },
                         new
                         {
                             Id = 19L,
                             BlockType = "textBox",
                             CanHaveChildren = false,
-                            DateCreated = new DateTime(2021, 3, 29, 22, 18, 58, 914, DateTimeKind.Local).AddTicks(5852),
-                            DateModified = new DateTime(2021, 3, 29, 22, 18, 58, 914, DateTimeKind.Local).AddTicks(5860),
+                            DateCreated = new DateTime(2021, 8, 17, 6, 1, 50, 696, DateTimeKind.Local).AddTicks(4419),
+                            DateModified = new DateTime(2021, 8, 17, 6, 1, 50, 696, DateTimeKind.Local).AddTicks(4421),
                             ParentId = 0L,
-                            Title = "TextBox"
+                            Title = "TextBox",
+                            Uuid = new Guid("5921d796-32fa-496e-ab40-3c0fb381b339")
                         },
                         new
                         {
                             Id = 20L,
                             BlockType = "timePicker",
                             CanHaveChildren = false,
-                            DateCreated = new DateTime(2021, 3, 29, 22, 18, 58, 914, DateTimeKind.Local).AddTicks(5869),
-                            DateModified = new DateTime(2021, 3, 29, 22, 18, 58, 914, DateTimeKind.Local).AddTicks(5877),
+                            DateCreated = new DateTime(2021, 8, 17, 6, 1, 50, 696, DateTimeKind.Local).AddTicks(4425),
+                            DateModified = new DateTime(2021, 8, 17, 6, 1, 50, 696, DateTimeKind.Local).AddTicks(4428),
                             ParentId = 0L,
-                            Title = "Time Picker"
+                            Title = "Time Picker",
+                            Uuid = new Guid("c5578a5f-8639-4d29-a80b-9efcb617115e")
                         },
                         new
                         {
                             Id = 21L,
                             BlockType = "toggleSwitch",
                             CanHaveChildren = false,
-                            DateCreated = new DateTime(2021, 3, 29, 22, 18, 58, 914, DateTimeKind.Local).AddTicks(5886),
-                            DateModified = new DateTime(2021, 3, 29, 22, 18, 58, 914, DateTimeKind.Local).AddTicks(5894),
+                            DateCreated = new DateTime(2021, 8, 17, 6, 1, 50, 696, DateTimeKind.Local).AddTicks(4435),
+                            DateModified = new DateTime(2021, 8, 17, 6, 1, 50, 696, DateTimeKind.Local).AddTicks(4438),
                             ParentId = 0L,
-                            Title = "Toggle Switch"
+                            Title = "Toggle Switch",
+                            Uuid = new Guid("cc10da55-2cdd-4fa9-bda6-eeb2f3b65eeb")
                         },
                         new
                         {
                             Id = 22L,
                             BlockType = "imageGallery",
                             CanHaveChildren = true,
-                            DateCreated = new DateTime(2021, 3, 29, 22, 18, 58, 914, DateTimeKind.Local).AddTicks(5902),
-                            DateModified = new DateTime(2021, 3, 29, 22, 18, 58, 914, DateTimeKind.Local).AddTicks(5910),
+                            DateCreated = new DateTime(2021, 8, 17, 6, 1, 50, 696, DateTimeKind.Local).AddTicks(4442),
+                            DateModified = new DateTime(2021, 8, 17, 6, 1, 50, 696, DateTimeKind.Local).AddTicks(4444),
                             ParentId = 0L,
-                            Title = "Image Gallery"
+                            Title = "Image Gallery",
+                            Uuid = new Guid("6571dd6c-eff9-40c4-a8aa-fdace8cb0588")
                         },
                         new
                         {
                             Id = 23L,
                             BlockType = "image",
                             CanHaveChildren = false,
-                            DateCreated = new DateTime(2021, 3, 29, 22, 18, 58, 914, DateTimeKind.Local).AddTicks(5919),
-                            DateModified = new DateTime(2021, 3, 29, 22, 18, 58, 914, DateTimeKind.Local).AddTicks(5926),
+                            DateCreated = new DateTime(2021, 8, 17, 6, 1, 50, 696, DateTimeKind.Local).AddTicks(4448),
+                            DateModified = new DateTime(2021, 8, 17, 6, 1, 50, 696, DateTimeKind.Local).AddTicks(4451),
                             ParentId = 0L,
-                            Title = "Image"
+                            Title = "Image",
+                            Uuid = new Guid("c9b04e1d-2cd9-4fb5-a86a-f1a9cf8228c4")
                         },
                         new
                         {
                             Id = 24L,
                             BlockType = "imageLink",
                             CanHaveChildren = false,
-                            DateCreated = new DateTime(2021, 3, 29, 22, 18, 58, 914, DateTimeKind.Local).AddTicks(5936),
-                            DateModified = new DateTime(2021, 3, 29, 22, 18, 58, 914, DateTimeKind.Local).AddTicks(5944),
+                            DateCreated = new DateTime(2021, 8, 17, 6, 1, 50, 696, DateTimeKind.Local).AddTicks(4455),
+                            DateModified = new DateTime(2021, 8, 17, 6, 1, 50, 696, DateTimeKind.Local).AddTicks(4458),
                             ParentId = 0L,
-                            Title = "Image Link"
+                            Title = "Image Link",
+                            Uuid = new Guid("d67e7198-082d-4066-90ad-6602e39e26b0")
                         },
                         new
                         {
                             Id = 25L,
                             BlockType = "productGallery",
                             CanHaveChildren = true,
-                            DateCreated = new DateTime(2021, 3, 29, 22, 18, 58, 914, DateTimeKind.Local).AddTicks(5953),
-                            DateModified = new DateTime(2021, 3, 29, 22, 18, 58, 914, DateTimeKind.Local).AddTicks(5961),
+                            DateCreated = new DateTime(2021, 8, 17, 6, 1, 50, 696, DateTimeKind.Local).AddTicks(4462),
+                            DateModified = new DateTime(2021, 8, 17, 6, 1, 50, 696, DateTimeKind.Local).AddTicks(4464),
                             ParentId = 0L,
-                            Title = "Product Listing"
+                            Title = "Product Listing",
+                            Uuid = new Guid("4e05ee00-d8c2-48ed-af1e-b1cc70f3e25f")
                         },
                         new
                         {
                             Id = 26L,
                             BlockType = "product",
                             CanHaveChildren = false,
-                            DateCreated = new DateTime(2021, 3, 29, 22, 18, 58, 914, DateTimeKind.Local).AddTicks(5969),
-                            DateModified = new DateTime(2021, 3, 29, 22, 18, 58, 914, DateTimeKind.Local).AddTicks(5977),
+                            DateCreated = new DateTime(2021, 8, 17, 6, 1, 50, 696, DateTimeKind.Local).AddTicks(4468),
+                            DateModified = new DateTime(2021, 8, 17, 6, 1, 50, 696, DateTimeKind.Local).AddTicks(4471),
                             ParentId = 0L,
-                            Title = "Product"
+                            Title = "Product",
+                            Uuid = new Guid("e8289a0e-c50d-425a-8cc0-0f7ed5d0f5f6")
                         },
                         new
                         {
                             Id = 27L,
                             BlockType = "carousel",
                             CanHaveChildren = true,
-                            DateCreated = new DateTime(2021, 3, 29, 22, 18, 58, 914, DateTimeKind.Local).AddTicks(5986),
-                            DateModified = new DateTime(2021, 3, 29, 22, 18, 58, 914, DateTimeKind.Local).AddTicks(5994),
+                            DateCreated = new DateTime(2021, 8, 17, 6, 1, 50, 696, DateTimeKind.Local).AddTicks(4475),
+                            DateModified = new DateTime(2021, 8, 17, 6, 1, 50, 696, DateTimeKind.Local).AddTicks(4477),
                             ParentId = 0L,
-                            Title = "Carousel"
+                            Title = "Carousel",
+                            Uuid = new Guid("05279ecc-9a0b-402b-95f4-87ae29a88a2d")
                         },
                         new
                         {
                             Id = 28L,
                             BlockType = "carouselItem",
                             CanHaveChildren = true,
-                            DateCreated = new DateTime(2021, 3, 29, 22, 18, 58, 914, DateTimeKind.Local).AddTicks(6002),
-                            DateModified = new DateTime(2021, 3, 29, 22, 18, 58, 914, DateTimeKind.Local).AddTicks(6010),
+                            DateCreated = new DateTime(2021, 8, 17, 6, 1, 50, 696, DateTimeKind.Local).AddTicks(4481),
+                            DateModified = new DateTime(2021, 8, 17, 6, 1, 50, 696, DateTimeKind.Local).AddTicks(4484),
                             ParentId = 0L,
-                            Title = "Carousel Item"
+                            Title = "Carousel Item",
+                            Uuid = new Guid("e9e28982-0145-4afc-9418-003df62c252d")
                         },
                         new
                         {
                             Id = 29L,
                             BlockType = "login",
                             CanHaveChildren = false,
-                            DateCreated = new DateTime(2021, 3, 29, 22, 18, 58, 914, DateTimeKind.Local).AddTicks(6019),
-                            DateModified = new DateTime(2021, 3, 29, 22, 18, 58, 914, DateTimeKind.Local).AddTicks(6027),
+                            DateCreated = new DateTime(2021, 8, 17, 6, 1, 50, 696, DateTimeKind.Local).AddTicks(4490),
+                            DateModified = new DateTime(2021, 8, 17, 6, 1, 50, 696, DateTimeKind.Local).AddTicks(4493),
                             ParentId = 0L,
-                            Title = "Login"
+                            Title = "Login",
+                            Uuid = new Guid("a7a85383-8438-4730-9e4f-6870c9eeebb3")
                         },
                         new
                         {
                             Id = 30L,
                             BlockType = "registration",
                             CanHaveChildren = false,
-                            DateCreated = new DateTime(2021, 3, 29, 22, 18, 58, 914, DateTimeKind.Local).AddTicks(6035),
-                            DateModified = new DateTime(2021, 3, 29, 22, 18, 58, 914, DateTimeKind.Local).AddTicks(6043),
+                            DateCreated = new DateTime(2021, 8, 17, 6, 1, 50, 696, DateTimeKind.Local).AddTicks(4497),
+                            DateModified = new DateTime(2021, 8, 17, 6, 1, 50, 696, DateTimeKind.Local).AddTicks(4499),
                             ParentId = 0L,
-                            Title = "Registration"
+                            Title = "Registration",
+                            Uuid = new Guid("a8247b1c-7b2f-492a-bef7-cb6fc01f13b5")
                         },
                         new
                         {
                             Id = 31L,
                             BlockType = "shoppingBasket",
                             CanHaveChildren = false,
-                            DateCreated = new DateTime(2021, 3, 29, 22, 18, 58, 914, DateTimeKind.Local).AddTicks(6052),
-                            DateModified = new DateTime(2021, 3, 29, 22, 18, 58, 914, DateTimeKind.Local).AddTicks(6060),
+                            DateCreated = new DateTime(2021, 8, 17, 6, 1, 50, 696, DateTimeKind.Local).AddTicks(4503),
+                            DateModified = new DateTime(2021, 8, 17, 6, 1, 50, 696, DateTimeKind.Local).AddTicks(4506),
                             ParentId = 0L,
-                            Title = "Shopping Basket"
+                            Title = "Shopping Basket",
+                            Uuid = new Guid("99782897-9985-4f23-9c40-9f9abd8b920f")
                         },
                         new
                         {
                             Id = 32L,
                             BlockType = "checkout",
                             CanHaveChildren = false,
-                            DateCreated = new DateTime(2021, 3, 29, 22, 18, 58, 914, DateTimeKind.Local).AddTicks(6069),
-                            DateModified = new DateTime(2021, 3, 29, 22, 18, 58, 914, DateTimeKind.Local).AddTicks(6077),
+                            DateCreated = new DateTime(2021, 8, 17, 6, 1, 50, 696, DateTimeKind.Local).AddTicks(4510),
+                            DateModified = new DateTime(2021, 8, 17, 6, 1, 50, 696, DateTimeKind.Local).AddTicks(4513),
                             ParentId = 0L,
-                            Title = "Checkout"
+                            Title = "Checkout",
+                            Uuid = new Guid("f7d331ca-6081-494d-b463-08fbe396ffcd")
                         },
                         new
                         {
                             Id = 33L,
                             BlockType = "search",
                             CanHaveChildren = false,
-                            DateCreated = new DateTime(2021, 3, 29, 22, 18, 58, 914, DateTimeKind.Local).AddTicks(6086),
-                            DateModified = new DateTime(2021, 3, 29, 22, 18, 58, 914, DateTimeKind.Local).AddTicks(6094),
+                            DateCreated = new DateTime(2021, 8, 17, 6, 1, 50, 696, DateTimeKind.Local).AddTicks(4516),
+                            DateModified = new DateTime(2021, 8, 17, 6, 1, 50, 696, DateTimeKind.Local).AddTicks(4519),
                             ParentId = 0L,
-                            Title = "Search"
+                            Title = "Search",
+                            Uuid = new Guid("f48328c4-8676-42af-a343-08ea2a20c15b")
                         },
                         new
                         {
                             Id = 34L,
                             BlockType = "searchItem",
                             CanHaveChildren = false,
-                            DateCreated = new DateTime(2021, 3, 29, 22, 18, 58, 914, DateTimeKind.Local).AddTicks(6104),
-                            DateModified = new DateTime(2021, 3, 29, 22, 18, 58, 914, DateTimeKind.Local).AddTicks(6112),
+                            DateCreated = new DateTime(2021, 8, 17, 6, 1, 50, 696, DateTimeKind.Local).AddTicks(4523),
+                            DateModified = new DateTime(2021, 8, 17, 6, 1, 50, 696, DateTimeKind.Local).AddTicks(4526),
                             ParentId = 0L,
-                            Title = "Search Item"
+                            Title = "Search Item",
+                            Uuid = new Guid("c96987cf-7d6a-4a6e-bc6f-13bc3038858c")
                         },
                         new
                         {
                             Id = 35L,
                             BlockType = "card",
                             CanHaveChildren = true,
-                            DateCreated = new DateTime(2021, 3, 29, 22, 18, 58, 914, DateTimeKind.Local).AddTicks(6120),
-                            DateModified = new DateTime(2021, 3, 29, 22, 18, 58, 914, DateTimeKind.Local).AddTicks(6128),
+                            DateCreated = new DateTime(2021, 8, 17, 6, 1, 50, 696, DateTimeKind.Local).AddTicks(4530),
+                            DateModified = new DateTime(2021, 8, 17, 6, 1, 50, 696, DateTimeKind.Local).AddTicks(4532),
                             ParentId = 0L,
-                            Title = "Card"
+                            Title = "Card",
+                            Uuid = new Guid("b1719a5e-96b0-4484-92a0-a44014862de4")
                         });
                 });
 
@@ -438,6 +477,10 @@ namespace Superjack.MultiSites.Api.Migrations
                         .HasColumnType("nvarchar(max)")
                         .HasColumnName("Title");
 
+                    b.Property<Guid>("Uuid")
+                        .HasColumnType("uniqueidentifier")
+                        .HasColumnName("Uuid");
+
                     b.Property<string>("Value")
                         .HasColumnType("nvarchar(max)")
                         .HasColumnName("Value");
@@ -453,8 +496,39 @@ namespace Superjack.MultiSites.Api.Migrations
                             BlockId = 1L,
                             DataType = "int",
                             SortOrder = 0L,
-                            Title = "Number of Columns",
+                            Title = "numberOfColumns",
+                            Uuid = new Guid("674813a9-25e1-455b-9d9f-a48891689f56"),
                             Value = "1"
+                        },
+                        new
+                        {
+                            Id = 2L,
+                            BlockId = 2L,
+                            DataType = "string",
+                            SortOrder = 0L,
+                            Title = "type",
+                            Uuid = new Guid("d758bcb3-e67f-4332-bffb-f5c6112842bd"),
+                            Value = "button"
+                        },
+                        new
+                        {
+                            Id = 3L,
+                            BlockId = 2L,
+                            DataType = "string",
+                            SortOrder = 1L,
+                            Title = "text",
+                            Uuid = new Guid("15fcb375-aceb-46bb-95f1-2d7642f067c3"),
+                            Value = "Click"
+                        },
+                        new
+                        {
+                            Id = 4L,
+                            BlockId = 2L,
+                            DataType = "string",
+                            SortOrder = 2L,
+                            Title = "class",
+                            Uuid = new Guid("a173a2fb-f817-4c6c-82f8-72f8e2b2dcb4"),
+                            Value = "btn"
                         });
                 });
 
@@ -556,14 +630,14 @@ namespace Superjack.MultiSites.Api.Migrations
                         {
                             Id = 1L,
                             Binned = false,
-                            DateCreated = new DateTime(2021, 3, 29, 22, 18, 58, 937, DateTimeKind.Local).AddTicks(8742),
-                            DateModified = new DateTime(2021, 3, 29, 22, 18, 58, 938, DateTimeKind.Local).AddTicks(2097),
-                            DateScheduledPublish = new DateTime(2021, 3, 25, 22, 18, 58, 938, DateTimeKind.Local).AddTicks(4527),
+                            DateCreated = new DateTime(2021, 8, 17, 6, 1, 50, 700, DateTimeKind.Local).AddTicks(9239),
+                            DateModified = new DateTime(2021, 8, 17, 6, 1, 50, 700, DateTimeKind.Local).AddTicks(9585),
+                            DateScheduledPublish = new DateTime(2021, 8, 13, 6, 1, 50, 700, DateTimeKind.Local).AddTicks(9914),
                             Disabled = false,
                             Draft = false,
                             Level = 0,
                             NavigationTitle = "Home",
-                            PageIdentifier = "f8baa4da-57dc-4e55-a091-bc975ba824e7",
+                            PageIdentifier = "2aaf5367-5bb6-4c9b-aa6f-37ee7c8e5389",
                             PageTypeId = "Root",
                             Published = true,
                             Route = "/",
@@ -575,16 +649,16 @@ namespace Superjack.MultiSites.Api.Migrations
                         {
                             Id = 2L,
                             Binned = false,
-                            DateCreated = new DateTime(2021, 3, 29, 22, 18, 58, 940, DateTimeKind.Local).AddTicks(8322),
-                            DateModified = new DateTime(2021, 3, 29, 22, 18, 58, 940, DateTimeKind.Local).AddTicks(8447),
-                            DateScheduledPublish = new DateTime(2021, 3, 29, 22, 18, 58, 940, DateTimeKind.Local).AddTicks(8457),
+                            DateCreated = new DateTime(2021, 8, 17, 6, 1, 50, 701, DateTimeKind.Local).AddTicks(4235),
+                            DateModified = new DateTime(2021, 8, 17, 6, 1, 50, 701, DateTimeKind.Local).AddTicks(4251),
+                            DateScheduledPublish = new DateTime(2021, 8, 17, 6, 1, 50, 701, DateTimeKind.Local).AddTicks(4254),
                             Disabled = false,
                             Draft = false,
                             Level = 1,
                             NavigationTitle = "Portfolio",
-                            PageIdentifier = "4e9ee63a-fe9e-4be9-b8d7-0529969450cf",
+                            PageIdentifier = "8b2c6ae6-40a4-4920-9b09-14bf27c9de14",
                             PageTypeId = "StandardPage",
-                            ParentPageIdentifier = "f8baa4da-57dc-4e55-a091-bc975ba824e7",
+                            ParentPageIdentifier = "2aaf5367-5bb6-4c9b-aa6f-37ee7c8e5389",
                             Published = true,
                             Route = "/portfolio",
                             SiteId = 1L,
@@ -595,16 +669,16 @@ namespace Superjack.MultiSites.Api.Migrations
                         {
                             Id = 3L,
                             Binned = false,
-                            DateCreated = new DateTime(2021, 3, 29, 22, 18, 58, 940, DateTimeKind.Local).AddTicks(8477),
-                            DateModified = new DateTime(2021, 3, 29, 22, 18, 58, 940, DateTimeKind.Local).AddTicks(8487),
-                            DateScheduledPublish = new DateTime(2021, 3, 29, 22, 18, 58, 940, DateTimeKind.Local).AddTicks(8495),
+                            DateCreated = new DateTime(2021, 8, 17, 6, 1, 50, 701, DateTimeKind.Local).AddTicks(4260),
+                            DateModified = new DateTime(2021, 8, 17, 6, 1, 50, 701, DateTimeKind.Local).AddTicks(4263),
+                            DateScheduledPublish = new DateTime(2021, 8, 17, 6, 1, 50, 701, DateTimeKind.Local).AddTicks(4265),
                             Disabled = false,
                             Draft = false,
                             Level = 2,
                             NavigationTitle = "Regulatory Services",
-                            PageIdentifier = "9068031f-cf82-44b8-bf21-8216b6923311",
+                            PageIdentifier = "da5c2b0d-5617-407d-a04b-045c945b89ca",
                             PageTypeId = "StandardPage",
-                            ParentPageIdentifier = "4e9ee63a-fe9e-4be9-b8d7-0529969450cf",
+                            ParentPageIdentifier = "8b2c6ae6-40a4-4920-9b09-14bf27c9de14",
                             Published = true,
                             Route = "/portfolio/regulatory-services",
                             SiteId = 1L,
@@ -615,16 +689,16 @@ namespace Superjack.MultiSites.Api.Migrations
                         {
                             Id = 4L,
                             Binned = false,
-                            DateCreated = new DateTime(2021, 3, 29, 22, 18, 58, 940, DateTimeKind.Local).AddTicks(8507),
-                            DateModified = new DateTime(2021, 3, 29, 22, 18, 58, 940, DateTimeKind.Local).AddTicks(8516),
-                            DateScheduledPublish = new DateTime(2021, 3, 29, 22, 18, 58, 940, DateTimeKind.Local).AddTicks(8524),
+                            DateCreated = new DateTime(2021, 8, 17, 6, 1, 50, 701, DateTimeKind.Local).AddTicks(4270),
+                            DateModified = new DateTime(2021, 8, 17, 6, 1, 50, 701, DateTimeKind.Local).AddTicks(4272),
+                            DateScheduledPublish = new DateTime(2021, 8, 17, 6, 1, 50, 701, DateTimeKind.Local).AddTicks(4275),
                             Disabled = false,
                             Draft = false,
                             Level = 1,
                             NavigationTitle = "About",
-                            PageIdentifier = "528af808-61b1-48bc-b9d7-560f2d0718a8",
+                            PageIdentifier = "1140bd07-b78e-4181-90d2-7a15867e902c",
                             PageTypeId = "StandardPage",
-                            ParentPageIdentifier = "f8baa4da-57dc-4e55-a091-bc975ba824e7",
+                            ParentPageIdentifier = "2aaf5367-5bb6-4c9b-aa6f-37ee7c8e5389",
                             Published = true,
                             Route = "/about",
                             SiteId = 1L,
@@ -635,16 +709,16 @@ namespace Superjack.MultiSites.Api.Migrations
                         {
                             Id = 5L,
                             Binned = false,
-                            DateCreated = new DateTime(2021, 3, 29, 22, 18, 58, 940, DateTimeKind.Local).AddTicks(8536),
-                            DateModified = new DateTime(2021, 3, 29, 22, 18, 58, 940, DateTimeKind.Local).AddTicks(8544),
-                            DateScheduledPublish = new DateTime(2021, 3, 29, 22, 18, 58, 940, DateTimeKind.Local).AddTicks(8552),
+                            DateCreated = new DateTime(2021, 8, 17, 6, 1, 50, 701, DateTimeKind.Local).AddTicks(4279),
+                            DateModified = new DateTime(2021, 8, 17, 6, 1, 50, 701, DateTimeKind.Local).AddTicks(4282),
+                            DateScheduledPublish = new DateTime(2021, 8, 17, 6, 1, 50, 701, DateTimeKind.Local).AddTicks(4284),
                             Disabled = false,
                             Draft = false,
                             Level = 1,
                             NavigationTitle = "Contact",
-                            PageIdentifier = "9455e0e8-cbde-40c2-923a-f32bd0cec2b1",
+                            PageIdentifier = "e1a0b1e8-53f4-46e9-a986-b5a912ced43a",
                             PageTypeId = "StandardPage",
-                            ParentPageIdentifier = "f8baa4da-57dc-4e55-a091-bc975ba824e7",
+                            ParentPageIdentifier = "2aaf5367-5bb6-4c9b-aa6f-37ee7c8e5389",
                             Published = true,
                             Route = "/contact",
                             SiteId = 1L,
@@ -655,14 +729,14 @@ namespace Superjack.MultiSites.Api.Migrations
                         {
                             Id = 6L,
                             Binned = false,
-                            DateCreated = new DateTime(2021, 3, 29, 22, 18, 58, 940, DateTimeKind.Local).AddTicks(8563),
-                            DateModified = new DateTime(2021, 3, 29, 22, 18, 58, 940, DateTimeKind.Local).AddTicks(8571),
-                            DateScheduledPublish = new DateTime(2021, 3, 26, 22, 18, 58, 940, DateTimeKind.Local).AddTicks(8579),
+                            DateCreated = new DateTime(2021, 8, 17, 6, 1, 50, 701, DateTimeKind.Local).AddTicks(4289),
+                            DateModified = new DateTime(2021, 8, 17, 6, 1, 50, 701, DateTimeKind.Local).AddTicks(4291),
+                            DateScheduledPublish = new DateTime(2021, 8, 14, 6, 1, 50, 701, DateTimeKind.Local).AddTicks(4294),
                             Disabled = false,
                             Draft = false,
                             Level = 0,
                             NavigationTitle = "Home",
-                            PageIdentifier = "f8baa4da-57dc-4e55-a091-bc975ba824e7",
+                            PageIdentifier = "2aaf5367-5bb6-4c9b-aa6f-37ee7c8e5389",
                             PageTypeId = "Root",
                             Published = true,
                             Route = "/",
@@ -674,15 +748,15 @@ namespace Superjack.MultiSites.Api.Migrations
                         {
                             Id = 7L,
                             Binned = false,
-                            DateCreated = new DateTime(2021, 3, 29, 22, 18, 58, 940, DateTimeKind.Local).AddTicks(8599),
-                            DateModified = new DateTime(2021, 3, 29, 22, 18, 58, 940, DateTimeKind.Local).AddTicks(8607),
-                            DateScheduledExpiry = new DateTime(2021, 3, 28, 22, 18, 58, 940, DateTimeKind.Local).AddTicks(8623),
-                            DateScheduledPublish = new DateTime(2021, 3, 27, 22, 18, 58, 940, DateTimeKind.Local).AddTicks(8615),
+                            DateCreated = new DateTime(2021, 8, 17, 6, 1, 50, 701, DateTimeKind.Local).AddTicks(4298),
+                            DateModified = new DateTime(2021, 8, 17, 6, 1, 50, 701, DateTimeKind.Local).AddTicks(4301),
+                            DateScheduledExpiry = new DateTime(2021, 8, 16, 6, 1, 50, 701, DateTimeKind.Local).AddTicks(4306),
+                            DateScheduledPublish = new DateTime(2021, 8, 15, 6, 1, 50, 701, DateTimeKind.Local).AddTicks(4304),
                             Disabled = false,
                             Draft = false,
                             Level = 0,
                             NavigationTitle = "Home",
-                            PageIdentifier = "f8baa4da-57dc-4e55-a091-bc975ba824e7",
+                            PageIdentifier = "2aaf5367-5bb6-4c9b-aa6f-37ee7c8e5389",
                             PageTypeId = "Root",
                             Published = true,
                             Route = "/",
@@ -694,13 +768,13 @@ namespace Superjack.MultiSites.Api.Migrations
                         {
                             Id = 8L,
                             Binned = false,
-                            DateCreated = new DateTime(2021, 3, 29, 22, 18, 58, 940, DateTimeKind.Local).AddTicks(8635),
-                            DateModified = new DateTime(2021, 3, 29, 22, 18, 58, 940, DateTimeKind.Local).AddTicks(8643),
+                            DateCreated = new DateTime(2021, 8, 17, 6, 1, 50, 701, DateTimeKind.Local).AddTicks(4311),
+                            DateModified = new DateTime(2021, 8, 17, 6, 1, 50, 701, DateTimeKind.Local).AddTicks(4313),
                             Disabled = false,
                             Draft = true,
                             Level = 0,
                             NavigationTitle = "Home",
-                            PageIdentifier = "f8baa4da-57dc-4e55-a091-bc975ba824e7",
+                            PageIdentifier = "2aaf5367-5bb6-4c9b-aa6f-37ee7c8e5389",
                             PageTypeId = "Root",
                             Published = false,
                             Route = "/",
@@ -825,85 +899,85 @@ namespace Superjack.MultiSites.Api.Migrations
                         {
                             Id = "Root",
                             Body = "{\"useBlocks\": true, \"title\": \"Homepage\"}",
-                            DateCreated = new DateTime(2021, 3, 29, 22, 18, 58, 892, DateTimeKind.Local).AddTicks(2821)
+                            DateCreated = new DateTime(2021, 8, 17, 6, 1, 50, 692, DateTimeKind.Local).AddTicks(2767)
                         },
                         new
                         {
                             Id = "StandardPage",
                             Body = "{\"useBlocks\": true, \"title\": \"Standard Page\"}",
-                            DateCreated = new DateTime(2021, 3, 29, 22, 18, 58, 905, DateTimeKind.Local).AddTicks(821)
+                            DateCreated = new DateTime(2021, 8, 17, 6, 1, 50, 694, DateTimeKind.Local).AddTicks(7368)
                         },
                         new
                         {
                             Id = "ProductList",
                             Body = "{\"useBlocks\": true, \"title\": \"Product List\"}",
-                            DateCreated = new DateTime(2021, 3, 29, 22, 18, 58, 905, DateTimeKind.Local).AddTicks(970)
+                            DateCreated = new DateTime(2021, 8, 17, 6, 1, 50, 694, DateTimeKind.Local).AddTicks(7409)
                         },
                         new
                         {
                             Id = "ProductDetail",
                             Body = "{\"useBlocks\": true, \"title\": \"ProductDetail\"}",
-                            DateCreated = new DateTime(2021, 3, 29, 22, 18, 58, 905, DateTimeKind.Local).AddTicks(984)
+                            DateCreated = new DateTime(2021, 8, 17, 6, 1, 50, 694, DateTimeKind.Local).AddTicks(7414)
                         },
                         new
                         {
                             Id = "EventList",
                             Body = "{\"useBlocks\": true, \"title\": \"Event List\"}",
-                            DateCreated = new DateTime(2021, 3, 29, 22, 18, 58, 905, DateTimeKind.Local).AddTicks(993)
+                            DateCreated = new DateTime(2021, 8, 17, 6, 1, 50, 694, DateTimeKind.Local).AddTicks(7418)
                         },
                         new
                         {
                             Id = "EventDetail",
                             Body = "{\"useBlocks\": true, \"title\": \"Event Detail\"}",
-                            DateCreated = new DateTime(2021, 3, 29, 22, 18, 58, 905, DateTimeKind.Local).AddTicks(1001)
+                            DateCreated = new DateTime(2021, 8, 17, 6, 1, 50, 694, DateTimeKind.Local).AddTicks(7421)
                         },
                         new
                         {
                             Id = "ArticleList",
                             Body = "{\"useBlocks\": true, \"title\": \"Article List\"}",
-                            DateCreated = new DateTime(2021, 3, 29, 22, 18, 58, 905, DateTimeKind.Local).AddTicks(1010)
+                            DateCreated = new DateTime(2021, 8, 17, 6, 1, 50, 694, DateTimeKind.Local).AddTicks(7424)
                         },
                         new
                         {
                             Id = "ArticleDetail",
                             Body = "{\"useBlocks\": true, \"title\": \"Article Detail\"}",
-                            DateCreated = new DateTime(2021, 3, 29, 22, 18, 58, 905, DateTimeKind.Local).AddTicks(1019)
+                            DateCreated = new DateTime(2021, 8, 17, 6, 1, 50, 694, DateTimeKind.Local).AddTicks(7427)
                         },
                         new
                         {
                             Id = "FeatureLanding",
                             Body = "{\"useBlocks\": true, \"title\": \"Feature Landing\"}",
-                            DateCreated = new DateTime(2021, 3, 29, 22, 18, 58, 905, DateTimeKind.Local).AddTicks(1027)
+                            DateCreated = new DateTime(2021, 8, 17, 6, 1, 50, 694, DateTimeKind.Local).AddTicks(7430)
                         },
                         new
                         {
                             Id = "Error",
                             Body = "{\"useBlocks\": true, \"title\": \"Error\"}",
-                            DateCreated = new DateTime(2021, 3, 29, 22, 18, 58, 905, DateTimeKind.Local).AddTicks(1038)
+                            DateCreated = new DateTime(2021, 8, 17, 6, 1, 50, 694, DateTimeKind.Local).AddTicks(7433)
                         },
                         new
                         {
                             Id = "Search",
                             Body = "{\"useBlocks\": true, \"title\": \"Search\"}",
-                            DateCreated = new DateTime(2021, 3, 29, 22, 18, 58, 905, DateTimeKind.Local).AddTicks(1047)
+                            DateCreated = new DateTime(2021, 8, 17, 6, 1, 50, 694, DateTimeKind.Local).AddTicks(7436)
                         },
                         new
                         {
                             Id = "SearchResults",
                             Body = "{\"useBlocks\": true, \"title\": \"Search Results\"}",
-                            DateCreated = new DateTime(2021, 3, 29, 22, 18, 58, 905, DateTimeKind.Local).AddTicks(1057)
+                            DateCreated = new DateTime(2021, 8, 17, 6, 1, 50, 694, DateTimeKind.Local).AddTicks(7438)
                         },
                         new
                         {
                             Id = "Member",
                             Body = "{\"useBlocks\": true, \"title\": \"Member\"}",
-                            DateCreated = new DateTime(2021, 3, 29, 22, 18, 58, 905, DateTimeKind.Local).AddTicks(1066)
+                            DateCreated = new DateTime(2021, 8, 17, 6, 1, 50, 694, DateTimeKind.Local).AddTicks(7441)
                         },
                         new
                         {
                             Id = "Transaction",
                             Body = "{\"useBlocks\": true, \"title\": \"Transaction\"}",
-                            DateCreated = new DateTime(2021, 3, 29, 22, 18, 58, 905, DateTimeKind.Local).AddTicks(1075)
+                            DateCreated = new DateTime(2021, 8, 17, 6, 1, 50, 694, DateTimeKind.Local).AddTicks(7444)
                         });
                 });
 
@@ -933,6 +1007,10 @@ namespace Superjack.MultiSites.Api.Migrations
                         .HasColumnType("nvarchar(5)")
                         .HasColumnName("Protocol");
 
+                    b.Property<Guid>("Uuid")
+                        .HasColumnType("uniqueidentifier")
+                        .HasColumnName("Uuid");
+
                     b.HasKey("Id");
 
                     b.ToTable("Sites");
@@ -943,7 +1021,8 @@ namespace Superjack.MultiSites.Api.Migrations
                             Id = 1L,
                             Culture = "en-GB",
                             DomainName = "superjack.co.uk",
-                            Protocol = "https"
+                            Protocol = "https",
+                            Uuid = new Guid("b42a2198-1393-46bf-8d82-70f5eeecfa9a")
                         });
                 });
 
@@ -1001,10 +1080,10 @@ namespace Superjack.MultiSites.Api.Migrations
                         new
                         {
                             Id = 1L,
-                            DateCreated = new DateTime(2021, 3, 29, 22, 18, 58, 933, DateTimeKind.Local).AddTicks(7317),
+                            DateCreated = new DateTime(2021, 8, 17, 6, 1, 50, 700, DateTimeKind.Local).AddTicks(6593),
                             FirstName = "Stef",
-                            PasswordHash = new byte[] { 128, 195, 86, 129, 189, 56, 47, 228, 124, 241, 46, 224, 203, 197, 183, 132, 109, 54, 96, 125, 213, 209, 92, 110, 29, 99, 223, 46, 162, 106, 98, 171, 94, 9, 166, 250, 127, 103, 241, 97, 196, 247, 21, 229, 234, 61, 72, 170, 184, 21, 41, 237, 216, 30, 42, 48, 177, 154, 92, 106, 155, 185, 132, 130 },
-                            PasswordSalt = new byte[] { 145, 179, 67, 188, 159, 39, 127, 16, 36, 239, 10, 96, 145, 244, 241, 147, 166, 194, 110, 140, 221, 223, 149, 217, 248, 55, 35, 91, 219, 212, 203, 243, 253, 55, 235, 22, 150, 224, 167, 194, 179, 226, 22, 220, 44, 13, 177, 145, 6, 56, 239, 130, 34, 112, 121, 134, 129, 234, 144, 23, 23, 76, 50, 143, 52, 233, 206, 147, 132, 111, 1, 88, 176, 177, 72, 216, 164, 12, 125, 242, 129, 150, 177, 166, 13, 90, 2, 15, 201, 228, 24, 134, 237, 20, 103, 231, 227, 9, 131, 131, 127, 48, 213, 167, 166, 222, 34, 171, 40, 82, 68, 52, 48, 123, 88, 252, 113, 178, 118, 243, 140, 233, 220, 110, 184, 193, 24, 186 },
+                            PasswordHash = new byte[] { 233, 65, 27, 88, 163, 0, 41, 251, 167, 190, 175, 230, 184, 147, 213, 249, 124, 29, 218, 14, 233, 159, 11, 52, 133, 180, 6, 92, 137, 127, 161, 97, 27, 22, 23, 8, 131, 41, 233, 165, 156, 95, 115, 50, 65, 17, 105, 230, 160, 185, 170, 230, 195, 28, 226, 176, 122, 14, 181, 141, 71, 251, 250, 99 },
+                            PasswordSalt = new byte[] { 212, 97, 134, 241, 158, 201, 186, 65, 150, 116, 171, 70, 228, 27, 183, 80, 230, 38, 166, 250, 3, 145, 91, 28, 102, 203, 53, 45, 50, 198, 136, 132, 248, 18, 210, 36, 87, 49, 181, 255, 121, 83, 167, 123, 216, 254, 135, 241, 113, 27, 99, 44, 252, 167, 40, 113, 93, 245, 38, 18, 109, 133, 199, 63, 104, 165, 174, 248, 158, 14, 59, 61, 96, 212, 28, 224, 230, 45, 239, 118, 189, 195, 8, 52, 128, 13, 252, 25, 65, 149, 81, 26, 41, 165, 242, 65, 31, 2, 76, 243, 110, 208, 159, 191, 239, 155, 32, 129, 183, 69, 40, 3, 171, 8, 49, 38, 58, 109, 208, 40, 176, 0, 148, 13, 144, 138, 61, 116 },
                             Status = "Active",
                             Surname = "Cunning",
                             Username = "services@superjack.co.uk"

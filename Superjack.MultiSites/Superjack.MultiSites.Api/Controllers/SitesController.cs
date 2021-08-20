@@ -12,7 +12,7 @@ using Superjack.MultiSites.Api.Dtos;
 
 namespace Superjack.MultiSites.Api.Controllers
 {
-  //[Authorize]
+  [Authorize]
   [ApiController]
   [Route("[controller]")]
   public class SitesController : ControllerBase
@@ -97,6 +97,15 @@ namespace Superjack.MultiSites.Api.Controllers
     {
       _service.Delete(id);
       return Ok();
+    }
+
+    [HttpDelete]
+    [Route("~/sites/uuid/{uuid}")]
+    public IActionResult DeleteByUuid(string uuid)
+    {
+      var item = _service.GetByUuid(uuid);
+      return Delete(item.Id);
+      
     }
 
 

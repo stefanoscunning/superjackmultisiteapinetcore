@@ -50,41 +50,41 @@ namespace Superjack.MultiSites.Api.DataAccess
 
       var blocks = new Block[]
       {
-        new Block(){Id=1,DateCreated=DateTime.Now, DateModified=DateTime.Now, BlockType="columnContainer", Title="Columns", CanHaveChildren=true},
-        new Block(){Id=2,DateCreated=DateTime.Now, DateModified=DateTime.Now, BlockType="button", Title="Button", CanHaveChildren=false},
-        new Block(){Id=3,DateCreated=DateTime.Now, DateModified=DateTime.Now, BlockType="checkbox", Title="Checkbox", CanHaveChildren=false},
-        new Block(){Id=4,DateCreated=DateTime.Now, DateModified=DateTime.Now, BlockType="checklist", Title="Checklist", CanHaveChildren=false},
-        new Block(){Id=5,DateCreated=DateTime.Now, DateModified=DateTime.Now, BlockType="dataListGroup", Title="Data List Group", CanHaveChildren=false},
-        new Block(){Id=6,DateCreated=DateTime.Now, DateModified=DateTime.Now, BlockType="datePicker", Title="Date Picker", CanHaveChildren=false},
-        new Block(){Id=7,DateCreated=DateTime.Now, DateModified=DateTime.Now, BlockType="divider", Title="Divider", CanHaveChildren=false},
-        new Block(){Id=8,DateCreated=DateTime.Now, DateModified=DateTime.Now, BlockType="dropDown", Title="Drop-down", CanHaveChildren=false},
-        new Block(){Id=9,DateCreated=DateTime.Now, DateModified=DateTime.Now, BlockType="editableTable", Title="Editable Table", CanHaveChildren=false},
-        new Block(){Id=10,DateCreated=DateTime.Now, DateModified=DateTime.Now, BlockType="fileUpload", Title="File Upload", CanHaveChildren=false},
-        new Block(){Id=11,DateCreated=DateTime.Now, DateModified=DateTime.Now, BlockType="heading", Title="heading", CanHaveChildren=false},
-        new Block(){Id=12,DateCreated=DateTime.Now, DateModified=DateTime.Now, BlockType="subHeading", Title="Sub-heading", CanHaveChildren=false},
-        new Block(){Id=13,DateCreated=DateTime.Now, DateModified=DateTime.Now, BlockType="listGroup", Title="List Group", CanHaveChildren=false},
-        new Block(){Id=14,DateCreated=DateTime.Now, DateModified=DateTime.Now, BlockType="multiLineTextbox", Title="Multi-line Textbox", CanHaveChildren=false},
-        new Block(){Id=15,DateCreated=DateTime.Now, DateModified=DateTime.Now, BlockType="radioGroup", Title="Radio Group", CanHaveChildren=false},
-        new Block(){Id=16,DateCreated=DateTime.Now, DateModified=DateTime.Now, BlockType="signature", Title="Signature", CanHaveChildren=false},
-        new Block(){Id=17,DateCreated=DateTime.Now, DateModified=DateTime.Now, BlockType="table", Title="Table", CanHaveChildren=false},
-        new Block(){Id=18,DateCreated=DateTime.Now, DateModified=DateTime.Now, BlockType="textBlock", Title="Text Block", CanHaveChildren=false},
-        new Block(){Id=19,DateCreated=DateTime.Now, DateModified=DateTime.Now, BlockType="textBox", Title="TextBox", CanHaveChildren=false},
-        new Block(){Id=20,DateCreated=DateTime.Now, DateModified=DateTime.Now, BlockType="timePicker", Title="Time Picker", CanHaveChildren=false},
-        new Block(){Id=21,DateCreated=DateTime.Now, DateModified=DateTime.Now, BlockType="toggleSwitch", Title="Toggle Switch", CanHaveChildren=false},
-        new Block(){Id=22,DateCreated=DateTime.Now, DateModified=DateTime.Now, BlockType="imageGallery", Title="Image Gallery", CanHaveChildren=true},
-        new Block(){Id=23,DateCreated=DateTime.Now, DateModified=DateTime.Now, BlockType="image", Title="Image", CanHaveChildren=false},
-        new Block(){Id=24,DateCreated=DateTime.Now, DateModified=DateTime.Now, BlockType="imageLink", Title="Image Link", CanHaveChildren=false},
-        new Block(){Id=25,DateCreated=DateTime.Now, DateModified=DateTime.Now, BlockType="productGallery", Title="Product Listing", CanHaveChildren=true},
-        new Block(){Id=26,DateCreated=DateTime.Now, DateModified=DateTime.Now, BlockType="product", Title="Product", CanHaveChildren=false},
-        new Block(){Id=27,DateCreated=DateTime.Now, DateModified=DateTime.Now, BlockType="carousel", Title="Carousel", CanHaveChildren=true},
-        new Block(){Id=28,DateCreated=DateTime.Now, DateModified=DateTime.Now, BlockType="carouselItem", Title="Carousel Item", CanHaveChildren=true},
-        new Block(){Id=29,DateCreated=DateTime.Now, DateModified=DateTime.Now, BlockType="login", Title="Login", CanHaveChildren=false},
-        new Block(){Id=30,DateCreated=DateTime.Now, DateModified=DateTime.Now, BlockType="registration", Title="Registration", CanHaveChildren=false},
-        new Block(){Id=31,DateCreated=DateTime.Now, DateModified=DateTime.Now, BlockType="shoppingBasket", Title="Shopping Basket", CanHaveChildren=false},
-        new Block(){Id=32,DateCreated=DateTime.Now, DateModified=DateTime.Now, BlockType="checkout", Title="Checkout", CanHaveChildren=false},
-        new Block(){Id=33,DateCreated=DateTime.Now, DateModified=DateTime.Now, BlockType="search", Title="Search", CanHaveChildren=false},
-        new Block(){Id=34,DateCreated=DateTime.Now, DateModified=DateTime.Now, BlockType="searchItem", Title="Search Item", CanHaveChildren=false},
-        new Block(){Id=35,DateCreated=DateTime.Now, DateModified=DateTime.Now, BlockType="card", Title="Card", CanHaveChildren=true}
+        new Block(){Id=1, Uuid=Guid.NewGuid(),DateCreated=DateTime.Now, DateModified=DateTime.Now, BlockType="columnContainer", Title="Columns", CanHaveChildren=true},
+        new Block(){Id=2, Uuid=Guid.NewGuid(),DateCreated=DateTime.Now, DateModified=DateTime.Now, BlockType="button", Title="Button", CanHaveChildren=false},
+        new Block(){Id=3, Uuid=Guid.NewGuid(),DateCreated=DateTime.Now, DateModified=DateTime.Now, BlockType="checkbox", Title="Checkbox", CanHaveChildren=false},
+        new Block(){Id=4, Uuid=Guid.NewGuid(),DateCreated=DateTime.Now, DateModified=DateTime.Now, BlockType="checklist", Title="Checklist", CanHaveChildren=false},
+        new Block(){Id=5, Uuid=Guid.NewGuid(),DateCreated=DateTime.Now, DateModified=DateTime.Now, BlockType="dataListGroup", Title="Data List Group", CanHaveChildren=false},
+        new Block(){Id=6, Uuid=Guid.NewGuid(),DateCreated=DateTime.Now, DateModified=DateTime.Now, BlockType="datePicker", Title="Date Picker", CanHaveChildren=false},
+        new Block(){Id=7, Uuid=Guid.NewGuid(),DateCreated=DateTime.Now, DateModified=DateTime.Now, BlockType="divider", Title="Divider", CanHaveChildren=false},
+        new Block(){Id=8, Uuid=Guid.NewGuid(),DateCreated=DateTime.Now, DateModified=DateTime.Now, BlockType="dropDown", Title="Drop-down", CanHaveChildren=false},
+        new Block(){Id=9, Uuid=Guid.NewGuid(),DateCreated=DateTime.Now, DateModified=DateTime.Now, BlockType="editableTable", Title="Editable Table", CanHaveChildren=false},
+        new Block(){Id=10, Uuid=Guid.NewGuid(),DateCreated=DateTime.Now, DateModified=DateTime.Now, BlockType="fileUpload", Title="File Upload", CanHaveChildren=false},
+        new Block(){Id=11, Uuid=Guid.NewGuid(),DateCreated=DateTime.Now, DateModified=DateTime.Now, BlockType="heading", Title="heading", CanHaveChildren=false},
+        new Block(){Id=12, Uuid=Guid.NewGuid(),DateCreated=DateTime.Now, DateModified=DateTime.Now, BlockType="subHeading", Title="Sub-heading", CanHaveChildren=false},
+        new Block(){Id=13, Uuid=Guid.NewGuid(),DateCreated=DateTime.Now, DateModified=DateTime.Now, BlockType="listGroup", Title="List Group", CanHaveChildren=false},
+        new Block(){Id=14, Uuid=Guid.NewGuid(),DateCreated=DateTime.Now, DateModified=DateTime.Now, BlockType="multiLineTextbox", Title="Multi-line Textbox", CanHaveChildren=false},
+        new Block(){Id=15, Uuid=Guid.NewGuid(),DateCreated=DateTime.Now, DateModified=DateTime.Now, BlockType="radioGroup", Title="Radio Group", CanHaveChildren=false},
+        new Block(){Id=16, Uuid=Guid.NewGuid(),DateCreated=DateTime.Now, DateModified=DateTime.Now, BlockType="signature", Title="Signature", CanHaveChildren=false},
+        new Block(){Id=17, Uuid=Guid.NewGuid(),DateCreated=DateTime.Now, DateModified=DateTime.Now, BlockType="table", Title="Table", CanHaveChildren=false},
+        new Block(){Id=18, Uuid=Guid.NewGuid(),DateCreated=DateTime.Now, DateModified=DateTime.Now, BlockType="textBlock", Title="Text Block", CanHaveChildren=false},
+        new Block(){Id=19, Uuid=Guid.NewGuid(),DateCreated=DateTime.Now, DateModified=DateTime.Now, BlockType="textBox", Title="TextBox", CanHaveChildren=false},
+        new Block(){Id=20, Uuid=Guid.NewGuid(),DateCreated=DateTime.Now, DateModified=DateTime.Now, BlockType="timePicker", Title="Time Picker", CanHaveChildren=false},
+        new Block(){Id=21, Uuid=Guid.NewGuid(),DateCreated=DateTime.Now, DateModified=DateTime.Now, BlockType="toggleSwitch", Title="Toggle Switch", CanHaveChildren=false},
+        new Block(){Id=22, Uuid=Guid.NewGuid(),DateCreated=DateTime.Now, DateModified=DateTime.Now, BlockType="imageGallery", Title="Image Gallery", CanHaveChildren=true},
+        new Block(){Id=23, Uuid=Guid.NewGuid(),DateCreated=DateTime.Now, DateModified=DateTime.Now, BlockType="image", Title="Image", CanHaveChildren=false},
+        new Block(){Id=24, Uuid=Guid.NewGuid(),DateCreated=DateTime.Now, DateModified=DateTime.Now, BlockType="imageLink", Title="Image Link", CanHaveChildren=false},
+        new Block(){Id=25, Uuid=Guid.NewGuid(),DateCreated=DateTime.Now, DateModified=DateTime.Now, BlockType="productGallery", Title="Product Listing", CanHaveChildren=true},
+        new Block(){Id=26, Uuid=Guid.NewGuid(),DateCreated=DateTime.Now, DateModified=DateTime.Now, BlockType="product", Title="Product", CanHaveChildren=false},
+        new Block(){Id=27, Uuid=Guid.NewGuid(),DateCreated=DateTime.Now, DateModified=DateTime.Now, BlockType="carousel", Title="Carousel", CanHaveChildren=true},
+        new Block(){Id=28, Uuid=Guid.NewGuid(),DateCreated=DateTime.Now, DateModified=DateTime.Now, BlockType="carouselItem", Title="Carousel Item", CanHaveChildren=true},
+        new Block(){Id=29, Uuid=Guid.NewGuid(),DateCreated=DateTime.Now, DateModified=DateTime.Now, BlockType="login", Title="Login", CanHaveChildren=false},
+        new Block(){Id=30, Uuid=Guid.NewGuid(),DateCreated=DateTime.Now, DateModified=DateTime.Now, BlockType="registration", Title="Registration", CanHaveChildren=false},
+        new Block(){Id=31, Uuid=Guid.NewGuid(),DateCreated=DateTime.Now, DateModified=DateTime.Now, BlockType="shoppingBasket", Title="Shopping Basket", CanHaveChildren=false},
+        new Block(){Id=32, Uuid=Guid.NewGuid(),DateCreated=DateTime.Now, DateModified=DateTime.Now, BlockType="checkout", Title="Checkout", CanHaveChildren=false},
+        new Block(){Id=33, Uuid=Guid.NewGuid(),DateCreated=DateTime.Now, DateModified=DateTime.Now, BlockType="search", Title="Search", CanHaveChildren=false},
+        new Block(){Id=34, Uuid=Guid.NewGuid(),DateCreated=DateTime.Now, DateModified=DateTime.Now, BlockType="searchItem", Title="Search Item", CanHaveChildren=false},
+        new Block(){Id=35, Uuid=Guid.NewGuid(),DateCreated=DateTime.Now, DateModified=DateTime.Now, BlockType="card", Title="Card", CanHaveChildren=true}
 
 
       };
@@ -93,14 +93,17 @@ namespace Superjack.MultiSites.Api.DataAccess
 
       var blockFields = new BlockField[]
       {
-        new BlockField(){Id=1, BlockId=1, Title="Number of Columns", DataType="int", SortOrder=0, Value="1"}
+        new BlockField(){Id=1, Uuid=Guid.NewGuid(), BlockId=1, Title="numberOfColumns", DataType="int", SortOrder=0, Value="1"},
+        new BlockField(){Id=2, Uuid=Guid.NewGuid(), BlockId=2, Title="type", DataType="string", SortOrder=0, Value="button"},
+        new BlockField(){Id=3, Uuid=Guid.NewGuid(), BlockId=2, Title="text", DataType="string", SortOrder=1, Value="Click"},
+        new BlockField(){Id=4, Uuid=Guid.NewGuid(), BlockId=2, Title="class", DataType="string", SortOrder=2, Value="btn"}
       };
 
       modelBuilder.Entity<BlockField>().HasData(blockFields);
 
       var sites = new Site[]
       {
-        new Site(){Id=1, Protocol="https", DomainName="superjack.co.uk", Culture="en-GB"}
+        new Site(){Id=1, Uuid=Guid.NewGuid(), Protocol="https", DomainName="superjack.co.uk", Culture="en-GB"}
       };
 
       modelBuilder.Entity<Site>().HasData(sites);

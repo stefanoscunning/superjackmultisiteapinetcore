@@ -12,6 +12,7 @@ namespace Superjack.MultiSites.Api.Services
     IEnumerable<BlockField> GetAll();
     IEnumerable<BlockField> GetAllByBlockId(long blockId);
     BlockField GetById(long id);
+    BlockField GetByUuid(string uuid);
     BlockField Create(BlockField item);
     void Update(BlockField newitem);
     void Delete(long id);
@@ -40,6 +41,11 @@ namespace Superjack.MultiSites.Api.Services
     public BlockField GetById(long id)
     {
       return _context.BlockFields.Find(id);
+    }
+
+    public BlockField GetByUuid(string uuid)
+    {
+      return _context.BlockFields.Where(x => x.Uuid == Guid.Parse(uuid)).FirstOrDefault();
     }
 
     public BlockField Create(BlockField item)
@@ -77,6 +83,8 @@ namespace Superjack.MultiSites.Api.Services
         _context.SaveChanges();
       }
     }
+
+    
 
   }
 }

@@ -39,6 +39,17 @@ namespace Superjack.MultiSites.Api.Controllers
       return Ok(itemDtos);
     }
 
+    [HttpGet]
+    [Route("~/blocks/all")]
+    public IActionResult GetAll()
+    {
+
+      var items = _service.GetAll();
+      var itemDtos = _mapper.Map<IList<BlockDto>>(items);
+
+      return Ok(itemDtos);
+    }
+
     [HttpGet("{id}")]
     public IActionResult GetById(long id)
     {
@@ -89,6 +100,16 @@ namespace Superjack.MultiSites.Api.Controllers
       _service.Delete(id);
       return Ok();
     }
+
+    [HttpDelete]
+    [Route("~/blocks/uuid/{uuid}")]
+    public IActionResult DeleteByUuid(string uuid)
+    {
+      var item = _service.GetByUuid(uuid);
+      return Delete(item.Id);
+
+    }
+
 
 
 

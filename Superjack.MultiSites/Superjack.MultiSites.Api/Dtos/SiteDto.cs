@@ -12,6 +12,8 @@ namespace Superjack.MultiSites.Api.Dtos
   {
     public long Id { get; set; }
 
+    public Guid Uuid { get; set; }
+
     public string Protocol { get; set; }
 
     public string DomainName { get; set; }

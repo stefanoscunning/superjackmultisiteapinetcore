@@ -10,6 +10,7 @@ namespace Superjack.MultiSites.Api.Dtos
   public class BlockDto
   {
     public long Id { get; set; }
+    public Guid Uuid { get; set; }
     public DateTime DateCreated { get; set; }
     public DateTime DateModified { get; set; }
     public string Title { get; set; }

@@ -15,9 +15,15 @@ namespace Superjack.MultiSites.Api.DataAccess
     [Required]
     public long Id { get; set; }
 
+    [Column("Uuid")]
+    [Required]
+    public Guid Uuid { get; set; }
+
     [Column("BlockId")]
     [Required]
     public long BlockId { get; set; }
+
+
 
     [Column("Title")]
     [Required]
