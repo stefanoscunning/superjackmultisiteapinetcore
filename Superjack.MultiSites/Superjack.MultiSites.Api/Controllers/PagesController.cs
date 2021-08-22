@@ -9,6 +9,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using AutoMapper;
 using Superjack.MultiSites.Api.Dtos;
+using System.Text.Json;
 
 namespace Superjack.MultiSites.Api.Controllers
 {
@@ -69,20 +70,21 @@ namespace Superjack.MultiSites.Api.Controllers
           //  Comparison = "==",
           //  Query = "97d0f17a-6fd1-4acc-94d4-18198c9af795"
           //},
-          DateScheduledPublish = new
-          {
-            Comparison = "notnull",
-            Query = DateTime.Now
-          },
-          DateScheduledExpiry = new
-          {
-            Comparison = "current",
-            Query = DateTime.Now
-          },
+          //DateScheduledPublish = new
+          //{
+          //  Comparison = "notnull",
+          //  Query = DateTime.Now
+          //},
+          //DateScheduledExpiry = new
+          //{
+          //  Comparison = "current",
+          //  Query = DateTime.Now
+          //},
           SiteId = 1,
           Published = true,
-          Disabled = false,
-          Binned = false
+          //Disabled = false,
+          //Binned = false
+          Level = 0
           
         };
         var items = _service.Search(filters);
@@ -90,12 +92,34 @@ namespace Superjack.MultiSites.Api.Controllers
 
         return Ok(itemDtos);
       }
-      catch
+      catch(Exception ex)
       {
 
         return BadRequest();
       }
      
+    }
+
+
+    [HttpPost]
+    [Route("~/pages/querysearch")]
+    public IActionResult GetAllByQuery([FromBody] dynamic itemDto)
+    {
+      try
+      {
+       
+        var items = _service.Search(itemDto as dynamic);
+        var itemDtos = _mapper.Map<IList<PageDto>>(items);
+
+        return Ok(itemDtos);
+        
+      }
+      catch (Exception ex)
+      {
+
+        return BadRequest();
+      }
+
     }
 
     [HttpGet("{id}")]

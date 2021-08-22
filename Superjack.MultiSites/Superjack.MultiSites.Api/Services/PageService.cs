@@ -80,17 +80,17 @@ namespace Superjack.MultiSites.Api.Services
       var predicate = PredicateBuilder.New<Page>();
       predicate = predicate.Start(x => x.Id > 0);
 
-      if (IsPropertyExist(filters, "SiteId"))
+      if (IsPropertyExist(filters, "siteId"))
       {
-        long siteId = Convert.ToInt64(filters.SiteId);
+        long siteId = Convert.ToInt64(filters.siteId);
         predicate = predicate.And(x => x.SiteId == siteId);
         
       }
 
-      if (IsPropertyExist(filters, "PageIdentifier"))
+      if (IsPropertyExist(filters, "pageIdentifier"))
       {
-        string pageIdentifierQuery = filters.PageIdentifier.Query;
-        string pageIdentifierComparison = filters.PageIdentifier.Comparison;
+        string pageIdentifierQuery = filters.pageIdentifier.query;
+        string pageIdentifierComparison = filters.pageIdentifier.comparison;
         switch (pageIdentifierComparison)
         {
           case "contains":
@@ -105,10 +105,10 @@ namespace Superjack.MultiSites.Api.Services
         }
       }
 
-      if (IsPropertyExist(filters, "ParentPageIdentifier"))
+      if (IsPropertyExist(filters, "parentPageIdentifier"))
       {
-        string pageIdentifierQuery = filters.ParentPageIdentifier.Query;
-        string pageIdentifierComparison = filters.ParentPageIdentifier.Comparison;
+        string pageIdentifierQuery = filters.parentPageIdentifier.query;
+        string pageIdentifierComparison = filters.parentPageIdentifier.comparison;
         switch (pageIdentifierComparison)
         {
           case "contains":
@@ -123,10 +123,10 @@ namespace Superjack.MultiSites.Api.Services
         }
       }
 
-      if (IsPropertyExist(filters, "NavigationTitle"))
+      if (IsPropertyExist(filters, "navigationTitle"))
       {
-        string pageIdentifierQuery = filters.NavigationTitle.Query;
-        string pageIdentifierComparison = filters.NavigationTitle.Comparison;
+        string pageIdentifierQuery = filters.navigationTitle.query;
+        string pageIdentifierComparison = filters.navigationTitle.comparison;
         switch (pageIdentifierComparison)
         {
           case "contains":
@@ -141,10 +141,10 @@ namespace Superjack.MultiSites.Api.Services
         }
       }
 
-      if (IsPropertyExist(filters, "Title"))
+      if (IsPropertyExist(filters, "title"))
       {
-        string pageIdentifierQuery = filters.Title.Query;
-        string pageIdentifierComparison = filters.Title.Comparison;
+        string pageIdentifierQuery = filters.title.query;
+        string pageIdentifierComparison = filters.title.comparison;
         switch (pageIdentifierComparison)
         {
           case "contains":
@@ -159,10 +159,10 @@ namespace Superjack.MultiSites.Api.Services
         }
       }
 
-      if (IsPropertyExist(filters, "PageIdentifier"))
+      if (IsPropertyExist(filters, "pageIdentifier"))
       {
-        string pageIdentifierQuery = filters.PageIdentifier.Query;
-        string pageIdentifierComparison = filters.PageIdentifier.Comparison;
+        string pageIdentifierQuery = filters.pageIdentifier.query;
+        string pageIdentifierComparison = filters.pageIdentifier.comparison;
         switch (pageIdentifierComparison)
         {
           case "contains":
@@ -177,10 +177,10 @@ namespace Superjack.MultiSites.Api.Services
         }
       }
 
-      if (IsPropertyExist(filters, "DateCreated"))
+      if (IsPropertyExist(filters, "dateCreated"))
       {
-        DateTime dateQuery = Convert.ToDateTime(filters.DateCreated.Query);
-        string dateComparison = filters.DateCreated.Comparison;
+        DateTime dateQuery = Convert.ToDateTime(filters.dateCreated.query);
+        string dateComparison = filters.dateCreated.comparison;
         switch (dateComparison)
         {
           case ">":
@@ -193,10 +193,10 @@ namespace Superjack.MultiSites.Api.Services
         }
       }
 
-      if (IsPropertyExist(filters, "DateModified"))
+      if (IsPropertyExist(filters, "dateModified"))
       {
-        DateTime dateQuery = Convert.ToDateTime(filters.DateModified.Query);
-        string dateComparison = filters.DateModified.Comparison;
+        DateTime dateQuery = Convert.ToDateTime(filters.dateModified.query);
+        string dateComparison = filters.dateModified.comparison;
         switch (dateComparison)
         {
           case ">":
@@ -209,10 +209,10 @@ namespace Superjack.MultiSites.Api.Services
         }
       }
 
-      if (IsPropertyExist(filters, "DateScheduledPublish"))
+      if (IsPropertyExist(filters, "dateScheduledPublish"))
       {
-        DateTime dateQuery = Convert.ToDateTime(filters.DateScheduledPublish.Query);
-        string dateComparison = filters.DateScheduledPublish.Comparison;
+        DateTime dateQuery = Convert.ToDateTime(filters.dateScheduledPublish.query);
+        string dateComparison = filters.dateScheduledPublish.comparison;
         switch (dateComparison)
         {
           case ">":
@@ -231,10 +231,10 @@ namespace Superjack.MultiSites.Api.Services
         }
       }
 
-      if (IsPropertyExist(filters, "DateScheduledExpiry"))
+      if (IsPropertyExist(filters, "dateScheduledExpiry"))
       {
-        DateTime dateQuery = Convert.ToDateTime(filters.DateScheduledExpiry.Query);
-        string dateComparison = filters.DateScheduledExpiry.Comparison;
+        DateTime dateQuery = Convert.ToDateTime(filters.dateScheduledExpiry.query);
+        string dateComparison = filters.dateScheduledExpiry.comparison;
         switch (dateComparison)
         {
           case ">":
@@ -256,9 +256,9 @@ namespace Superjack.MultiSites.Api.Services
         }
       }
 
-      if (IsPropertyExist(filters, "Draft"))
+      if (IsPropertyExist(filters, "draft"))
       {
-        if (filters.Draft)
+        if (filters.draft)
         {
           predicate = predicate.And(x => x.Draft == true);
         }
@@ -267,9 +267,9 @@ namespace Superjack.MultiSites.Api.Services
           predicate = predicate.And(x => x.Draft == false);
         }
       }
-      if (IsPropertyExist(filters, "Published"))
+      if (IsPropertyExist(filters, "published"))
       {
-        if (filters.Published)
+        if (filters.published)
         {
           predicate = predicate.And(x => x.Published == true);
         }
@@ -278,9 +278,9 @@ namespace Superjack.MultiSites.Api.Services
           predicate = predicate.And(x => x.Published == false);
         }
       }
-      if (IsPropertyExist(filters, "Disabled"))
+      if (IsPropertyExist(filters, "disabled"))
       {
-        if (filters.Disabled)
+        if (filters.disabled)
         {
           predicate = predicate.And(x => x.Disabled == true);
         }
@@ -289,9 +289,9 @@ namespace Superjack.MultiSites.Api.Services
           predicate = predicate.And(x => x.Disabled == false);
         }
       }
-      if (IsPropertyExist(filters, "Binned"))
+      if (IsPropertyExist(filters, "binned"))
       {
-        if (filters.Binned)
+        if (filters.binned)
         {
           predicate = predicate.And(x => x.Binned == true);
         }
@@ -299,6 +299,12 @@ namespace Superjack.MultiSites.Api.Services
         {
           predicate = predicate.And(x => x.Binned == false);
         }
+      }
+
+      if (IsPropertyExist(filters, "level"))
+      {
+        int level = Convert.ToInt32(filters.level);
+        predicate = predicate.And(x => x.Level == level);
       }
 
       return _context.Pages.AsExpandable().Where(predicate);

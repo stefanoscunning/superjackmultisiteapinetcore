@@ -94,6 +94,30 @@ namespace Superjack.MultiSites.Api.Controllers
       }
     }
 
+    [HttpPut]
+    [Route("~/blockfields/blockid/{blockid}")]
+    public IActionResult UpdateAll(string blockid, [FromBody] BlockFieldDto[] itemsDto)
+    {
+      // map dto to entity and set id
+
+      try
+      {
+        foreach (var itemDto in itemsDto)
+        {
+          var item = _mapper.Map<BlockField>(itemDto);
+          _service.Update(item);
+        }
+        // save 
+
+        return Ok();
+      }
+      catch (Exception ex)
+      {
+        // return error message if there was an exception
+        return BadRequest(new { message = ex.Message });
+      }
+    }
+
     [HttpDelete("{id}")]
     public IActionResult Delete(long id)
     {
