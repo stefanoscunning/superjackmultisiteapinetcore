@@ -43,5 +43,8 @@ namespace Superjack.MultiSites.Api.Dtos
     public bool Disabled { get; set; }
     public bool Binned { get; set; }
 
+    public PageDto[] Versions { get; set; }
+    public PageDto[] Children { get; set; }
+
   }
 }

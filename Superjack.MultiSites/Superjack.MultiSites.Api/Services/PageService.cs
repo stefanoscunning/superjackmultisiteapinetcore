@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using System.Text;
 using System.Text.Json;
 using System.Dynamic;
+using Superjack.MultiSites.Api.Dtos;
 
 namespace Superjack.MultiSites.Api.Services
 {
@@ -14,9 +15,10 @@ namespace Superjack.MultiSites.Api.Services
   {
     IEnumerable<Page> GetAll();
     IEnumerable<Page> GetAllBySiteId(long siteId);
-
-    IEnumerable<Page> Search(dynamic filters);
-    IQueryable<Page> GetAllByQuery(dynamic filters);
+    IEnumerable<Page> GetRootNestedSitePages(long siteId);
+    IEnumerable<Page> GetNestedChildrenPages(long siteId, int level, string parentPageIdentifier);
+    IEnumerable<Page> Search(PageSearchFilterDto filters);
+    IQueryable<Page> GetAllByQuery(PageSearchFilterDto filters);
     Page GetById(long id);
     Page Create(Page item);
     void Update(Page newitem);
@@ -35,6 +37,19 @@ namespace Superjack.MultiSites.Api.Services
     public IEnumerable<Page> GetAll()
     {
       return _context.Pages;
+    }
+
+    public IEnumerable<Page> GetRootNestedSitePages(long siteId)
+    {
+      var pages = _context.Pages.Where(x => x.SiteId == siteId && x.PageTypeId == "Root").OrderByDescending(item => item.Id).ToArray();
+      return pages;
+    }
+
+    public IEnumerable<Page> GetNestedChildrenPages(long siteId, int level, string parentPageIdentifier)
+    {
+      var pages = _context.Pages.Where(x => x.SiteId == siteId && x.Level == level && x.ParentPageIdentifier == parentPageIdentifier)
+        .OrderBy(item => item.SortOrder).ThenBy(item => item.PageIdentifier).ThenByDescending(item => item.Id).ToArray();
+      return pages;
     }
 
     public IEnumerable<Page> GetAllBySiteId(long siteId)
@@ -56,7 +71,7 @@ namespace Superjack.MultiSites.Api.Services
         
     }
 
-    public IEnumerable<Page> Search(dynamic filters)
+    public IEnumerable<Page> Search(PageSearchFilterDto filters)
     {
 
       IQueryable<Page> q = GetAllByQuery(filters);
@@ -75,144 +90,61 @@ namespace Superjack.MultiSites.Api.Services
 
     }
 
-    public IQueryable<Page> GetAllByQuery(dynamic filters)
+    public IQueryable<Page> GetAllByQuery(PageSearchFilterDto filters)
     {
       var predicate = PredicateBuilder.New<Page>();
       predicate = predicate.Start(x => x.Id > 0);
 
-      if (IsPropertyExist(filters, "siteId"))
+      if (filters.SiteId!=null)
       {
-        long siteId = Convert.ToInt64(filters.siteId);
+        long siteId = Convert.ToInt64(filters.SiteId);
         predicate = predicate.And(x => x.SiteId == siteId);
         
       }
 
-      if (IsPropertyExist(filters, "pageIdentifier"))
+      if (filters.PageIdentifier!=null)
       {
-        string pageIdentifierQuery = filters.pageIdentifier.query;
-        string pageIdentifierComparison = filters.pageIdentifier.comparison;
+        object pageIdentifierQuery = filters.PageIdentifier.Query;
+        string pageIdentifierComparison = filters.PageIdentifier.Comparison;
         switch (pageIdentifierComparison)
         {
           case "contains":
-            predicate = predicate.And(x => x.PageIdentifier.Contains(pageIdentifierQuery));
+            predicate = predicate.And(x => x.PageIdentifier.Contains(pageIdentifierQuery.ToString()));
             break;
           case "==":
-            predicate = predicate.And(x => x.PageIdentifier == pageIdentifierQuery);
+            predicate = predicate.And(x => x.PageIdentifier == pageIdentifierQuery.ToString());
             break;
           case "!=":
-            predicate = predicate.And(x => x.PageIdentifier != pageIdentifierQuery);
+            predicate = predicate.And(x => x.PageIdentifier != pageIdentifierQuery.ToString());
             break;
         }
       }
 
-      if (IsPropertyExist(filters, "parentPageIdentifier"))
+      if (filters.ParentPageIdentifier!=null)
       {
-        string pageIdentifierQuery = filters.parentPageIdentifier.query;
-        string pageIdentifierComparison = filters.parentPageIdentifier.comparison;
+        object pageIdentifierQuery = filters.PageIdentifier.Query;
+        string pageIdentifierComparison = filters.PageIdentifier.Comparison;
         switch (pageIdentifierComparison)
         {
           case "contains":
-            predicate = predicate.And(x => x.ParentPageIdentifier.Contains(pageIdentifierQuery));
+            predicate = predicate.And(x => x.ParentPageIdentifier.Contains(pageIdentifierQuery.ToString()));
             break;
           case "==":
-            predicate = predicate.And(x => x.ParentPageIdentifier == pageIdentifierQuery);
+            predicate = predicate.And(x => x.ParentPageIdentifier == pageIdentifierQuery.ToString());
             break;
           case "!=":
-            predicate = predicate.And(x => x.ParentPageIdentifier != pageIdentifierQuery);
+            predicate = predicate.And(x => x.ParentPageIdentifier != pageIdentifierQuery.ToString());
             break;
         }
       }
 
-      if (IsPropertyExist(filters, "navigationTitle"))
-      {
-        string pageIdentifierQuery = filters.navigationTitle.query;
-        string pageIdentifierComparison = filters.navigationTitle.comparison;
-        switch (pageIdentifierComparison)
-        {
-          case "contains":
-            predicate = predicate.And(x => x.NavigationTitle.Contains(pageIdentifierQuery));
-            break;
-          case "==":
-            predicate = predicate.And(x => x.NavigationTitle == pageIdentifierQuery);
-            break;
-          case "!=":
-            predicate = predicate.And(x => x.NavigationTitle != pageIdentifierQuery);
-            break;
-        }
-      }
 
-      if (IsPropertyExist(filters, "title"))
-      {
-        string pageIdentifierQuery = filters.title.query;
-        string pageIdentifierComparison = filters.title.comparison;
-        switch (pageIdentifierComparison)
-        {
-          case "contains":
-            predicate = predicate.And(x => x.Title.Contains(pageIdentifierQuery));
-            break;
-          case "==":
-            predicate = predicate.And(x => x.Title == pageIdentifierQuery);
-            break;
-          case "!=":
-            predicate = predicate.And(x => x.Title != pageIdentifierQuery);
-            break;
-        }
-      }
+    
 
-      if (IsPropertyExist(filters, "pageIdentifier"))
+      if (filters.DateScheduledPublished!=null)
       {
-        string pageIdentifierQuery = filters.pageIdentifier.query;
-        string pageIdentifierComparison = filters.pageIdentifier.comparison;
-        switch (pageIdentifierComparison)
-        {
-          case "contains":
-            predicate = predicate.And(x => x.PageIdentifier.Contains(pageIdentifierQuery));
-            break;
-          case "==":
-            predicate = predicate.And(x => x.PageIdentifier == pageIdentifierQuery);
-            break;
-          case "!=":
-            predicate = predicate.And(x => x.PageIdentifier != pageIdentifierQuery);
-            break;
-        }
-      }
-
-      if (IsPropertyExist(filters, "dateCreated"))
-      {
-        DateTime dateQuery = Convert.ToDateTime(filters.dateCreated.query);
-        string dateComparison = filters.dateCreated.comparison;
-        switch (dateComparison)
-        {
-          case ">":
-            predicate = predicate.And(x => x.DateCreated>dateQuery);
-            break;
-          case "<":
-            predicate = predicate.And(x => x.DateCreated < dateQuery);
-            break;
-          
-        }
-      }
-
-      if (IsPropertyExist(filters, "dateModified"))
-      {
-        DateTime dateQuery = Convert.ToDateTime(filters.dateModified.query);
-        string dateComparison = filters.dateModified.comparison;
-        switch (dateComparison)
-        {
-          case ">":
-            predicate = predicate.And(x => x.DateModified > dateQuery);
-            break;
-          case "<":
-            predicate = predicate.And(x => x.DateModified < dateQuery);
-            break;
-
-        }
-      }
-
-      if (IsPropertyExist(filters, "dateScheduledPublish"))
-      {
-        DateTime dateQuery = Convert.ToDateTime(filters.dateScheduledPublish.query);
-        string dateComparison = filters.dateScheduledPublish.comparison;
+        DateTime dateQuery = Convert.ToDateTime(filters.DateScheduledPublished.Query);
+        string dateComparison = filters.DateScheduledPublished.Comparison;
         switch (dateComparison)
         {
           case ">":
@@ -231,10 +163,10 @@ namespace Superjack.MultiSites.Api.Services
         }
       }
 
-      if (IsPropertyExist(filters, "dateScheduledExpiry"))
+      if (filters.DateScheduledExpiry!=null)
       {
-        DateTime dateQuery = Convert.ToDateTime(filters.dateScheduledExpiry.query);
-        string dateComparison = filters.dateScheduledExpiry.comparison;
+        DateTime dateQuery = Convert.ToDateTime(filters.DateScheduledExpiry.Query);
+        string dateComparison = filters.DateScheduledExpiry.Comparison;
         switch (dateComparison)
         {
           case ">":
@@ -256,9 +188,9 @@ namespace Superjack.MultiSites.Api.Services
         }
       }
 
-      if (IsPropertyExist(filters, "draft"))
+      if (filters.Draft!=null)
       {
-        if (filters.draft)
+        if (Convert.ToBoolean(filters.Draft))
         {
           predicate = predicate.And(x => x.Draft == true);
         }
@@ -267,9 +199,9 @@ namespace Superjack.MultiSites.Api.Services
           predicate = predicate.And(x => x.Draft == false);
         }
       }
-      if (IsPropertyExist(filters, "published"))
+      if (filters.Published!=null)
       {
-        if (filters.published)
+        if (Convert.ToBoolean(filters.Published))
         {
           predicate = predicate.And(x => x.Published == true);
         }
@@ -278,9 +210,9 @@ namespace Superjack.MultiSites.Api.Services
           predicate = predicate.And(x => x.Published == false);
         }
       }
-      if (IsPropertyExist(filters, "disabled"))
+      if (filters.Disabled!=null)
       {
-        if (filters.disabled)
+        if (Convert.ToBoolean(filters.Disabled))
         {
           predicate = predicate.And(x => x.Disabled == true);
         }
@@ -289,9 +221,9 @@ namespace Superjack.MultiSites.Api.Services
           predicate = predicate.And(x => x.Disabled == false);
         }
       }
-      if (IsPropertyExist(filters, "binned"))
+      if (filters.Binned!=null)
       {
-        if (filters.binned)
+        if (Convert.ToBoolean(filters.Binned))
         {
           predicate = predicate.And(x => x.Binned == true);
         }
@@ -301,9 +233,9 @@ namespace Superjack.MultiSites.Api.Services
         }
       }
 
-      if (IsPropertyExist(filters, "level"))
+      if (filters.Level!=null)
       {
-        int level = Convert.ToInt32(filters.level);
+        int level = Convert.ToInt32(filters.Level);
         predicate = predicate.And(x => x.Level == level);
       }
 

@@ -13,7 +13,7 @@ using System.Text.Json;
 
 namespace Superjack.MultiSites.Api.Controllers
 {
-  [Authorize]
+  //[Authorize]
   [ApiController]
   [Route("[controller]")]
   public class PagesController : ControllerBase
@@ -52,63 +52,61 @@ namespace Superjack.MultiSites.Api.Controllers
     }
 
     [HttpGet]
-    [Route("~/pages/query")]
-    //public IActionResult GetAllByQuery([FromBody] dynamic itemDto)
-    public IActionResult GetAllByQuery()
+    [Route("~/pages/tree/{siteid}")]
+    public IActionResult GetTreeBySiteId(long siteid)
     {
-      try
+      var roots = _service.GetRootNestedSitePages(siteid);
+      var pages = new List<PageDto>();
+      var root = roots!=null && roots.Count()>0 ? _mapper.Map<PageDto>(roots.ToArray()[0]) : null;
+      if(root!=null && roots.Count() > 1)
       {
-        
-        var filters = new
-        {
-          //PageIdentifier = new {
-          //  Comparison = "contains",
-          //  Query = "48b"
-          //},
-          //ParentPageIdentifier = new 
-          //{
-          //  Comparison = "==",
-          //  Query = "97d0f17a-6fd1-4acc-94d4-18198c9af795"
-          //},
-          //DateScheduledPublish = new
-          //{
-          //  Comparison = "notnull",
-          //  Query = DateTime.Now
-          //},
-          //DateScheduledExpiry = new
-          //{
-          //  Comparison = "current",
-          //  Query = DateTime.Now
-          //},
-          SiteId = 1,
-          Published = true,
-          //Disabled = false,
-          //Binned = false
-          Level = 0
-          
-        };
-        var items = _service.Search(filters);
-        var itemDtos = _mapper.Map<IList<PageDto>>(items);
-
-        return Ok(itemDtos);
+        var versionRoots = roots.Skip(1);
+        root.Versions = versionRoots.Any() ? _mapper.Map<PageDto[]>(versionRoots) : new List<PageDto>().ToArray();
       }
-      catch(Exception ex)
-      {
 
-        return BadRequest();
-      }
-     
+      var children = GetNestedChildrenPages(siteid, root.Level + 1, root.PageIdentifier);
+      root.Children = children.ToArray();
+      pages.Add(root);
+
+      return Ok(pages);
     }
+
+    private PageDto[] GetNestedChildrenPages(long siteid, int level, string parentPageIdentifier)
+    {
+      var children = _service.GetNestedChildrenPages(siteid, level, parentPageIdentifier);
+      var childrenPages = new List<PageDto>();
+      if (children.Any())
+      {
+        var pages = children.AsEnumerable().GroupBy(item => item.PageIdentifier)
+               .SelectMany(grouping => grouping.Take(1));
+        foreach(var p in pages)
+        {
+          var childPage = _mapper.Map<PageDto>(p);
+          childPage.Versions = GetVersionPages(childPage.PageIdentifier, children);
+          childPage.Children = GetNestedChildrenPages(siteid, level + 1, childPage.PageIdentifier);
+          childrenPages.Add(childPage);
+        }        
+      }
+      return childrenPages.ToArray();
+    }
+
+    private PageDto[] GetVersionPages(string pageIdentifier, IEnumerable<Page> children)
+    {
+      var versions = children.Where(x => x.PageIdentifier == pageIdentifier).Skip(1);
+      return _mapper.Map<PageDto[]>(versions);
+    }
+
+
 
 
     [HttpPost]
     [Route("~/pages/querysearch")]
-    public IActionResult GetAllByQuery([FromBody] dynamic itemDto)
+    public IActionResult GetAllByQuery([FromBody] PageSearchFilterDto itemDto)
     {
       try
       {
        
-        var items = _service.Search(itemDto as dynamic);
+        var items = _service.Search(itemDto);
         var itemDtos = _mapper.Map<IList<PageDto>>(items);
 
         return Ok(itemDtos);
