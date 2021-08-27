@@ -11,6 +11,7 @@ namespace Superjack.MultiSites.Api.Services
   {
     IEnumerable<PageBlock> GetAll();
     IEnumerable<PageBlock> GetAllByPageId(long pageId);
+    IEnumerable<PageBlock> GetAllByPageIdAndLevel(long pageId, long parentId, int level);
     PageBlock GetById(long id);
     PageBlock Create(PageBlock item);
     void Update(PageBlock newitem);
@@ -36,6 +37,10 @@ namespace Superjack.MultiSites.Api.Services
       return _context.PageBlocks.Where(x=>x.PageId==pageId).OrderBy(x=>x.SortOrder);
     }
 
+    public IEnumerable<PageBlock> GetAllByPageIdAndLevel(long pageId, long parentId, int level)
+    {
+      return _context.PageBlocks.Where(x => x.PageId == pageId && x.ParentId==parentId && x.Level==level).OrderBy(x => x.SortOrder);
+    }
 
     public PageBlock GetById(long id)
     {

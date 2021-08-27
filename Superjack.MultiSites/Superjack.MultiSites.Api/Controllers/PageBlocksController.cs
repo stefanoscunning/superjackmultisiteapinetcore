@@ -21,12 +21,20 @@ namespace Superjack.MultiSites.Api.Controllers
     private IMapper _mapper;
     private readonly ILogger<PageBlocksController> _logger;
     private IPageBlockService _service;
+    private IBlockService _blockService;
+    private IBlockFieldService _blockFieldService;
+    private IPageFieldService _pageFieldService;
 
-    public PageBlocksController(IMapper mapper, ILogger<PageBlocksController> logger, IPageBlockService service)
+    public PageBlocksController(IMapper mapper, ILogger<PageBlocksController> logger, IPageBlockService service,
+      IBlockService blockService, IBlockFieldService blockFieldService,
+      IPageFieldService pageFieldService)
     {
       _mapper = mapper;
       _logger = logger;
       _service = service;
+      _blockService = blockService;
+      _blockFieldService = blockFieldService;
+      _pageFieldService = pageFieldService;
     }
 
     [HttpGet]
@@ -39,14 +47,40 @@ namespace Superjack.MultiSites.Api.Controllers
       return Ok(itemDtos);
     }
 
+    private PageBlockDto[] GetPageBlocks(long pageId, long parentId, int level)
+    {
+      var pageBlocks = _service.GetAllByPageIdAndLevel(pageId, parentId, level);
+      var pageBlockDtos = _mapper.Map<IList<PageBlockDto>>(pageBlocks);
+      foreach (var pb in pageBlockDtos)
+      {
+        var block = _blockService.GetById(pb.BlockId);
+        var blockDto = _mapper.Map<BlockDto>(block);
+        pb.Block = blockDto;
+
+        var pageFields = _pageFieldService.GetAllByPageBlockId(pb.Id);
+        var pageFieldDtos = _mapper.Map<IList<PageFieldDto>>(pageFields);
+
+        foreach (var pf in pageFieldDtos)
+        {
+          var blockField = _blockFieldService.GetById(pf.FieldId);
+          var blockFieldDto = _mapper.Map<BlockFieldDto>(blockField);
+          pf.BlockField = blockFieldDto;
+        }
+
+        pb.Fields = pageFieldDtos.ToArray();
+
+        var children = GetPageBlocks(pageId, pb.Id, level + 1);
+        pb.Children = children.Any() ? children : new List<PageBlockDto>().ToArray();
+      }
+
+      return pageBlockDtos.ToArray();
+    }
+
     [HttpGet]
     [Route("~/pageblocks/pageid/{pageid}")]
     public IActionResult GetAllByPageId(long pageid)
     {
-
-      var items = _service.GetAllByPageId(pageid);
-      var itemDtos = _mapper.Map<IList<PageBlockDto>>(items);
-
+      var itemDtos = GetPageBlocks(pageid, 0, 0);
       return Ok(itemDtos);
     }
 

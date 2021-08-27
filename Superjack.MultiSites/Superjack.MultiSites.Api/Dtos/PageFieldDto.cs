@@ -10,10 +10,11 @@ namespace Superjack.MultiSites.Api.Dtos
   public class PageFieldDto
   {
     public long Id { get; set; }
+    public Guid Uuid { get; set; }
 
     public long PageBlockId { get; set; }
 
-    public long FieldId { get; set; }
+    public long? FieldId { get; set; }
     public string Title { get; set; }
 
     public string DataType { get; set; }
@@ -21,6 +22,7 @@ namespace Superjack.MultiSites.Api.Dtos
     public long SortOrder { get; set; }
 
     public string Value { get; set; }
+    public BlockFieldDto? BlockField { get; set; }
   }
 }
 

@@ -10,7 +10,7 @@ using Superjack.MultiSites.Api.DataAccess;
 namespace Superjack.MultiSites.Api.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20210822030612_InitialMigration")]
+    [Migration("20210826213934_InitialMigration")]
     partial class InitialMigration
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -69,385 +69,396 @@ namespace Superjack.MultiSites.Api.Migrations
                             Id = 1L,
                             BlockType = "columnContainer",
                             CanHaveChildren = true,
-                            DateCreated = new DateTime(2021, 8, 22, 4, 6, 11, 920, DateTimeKind.Local).AddTicks(8195),
-                            DateModified = new DateTime(2021, 8, 22, 4, 6, 11, 920, DateTimeKind.Local).AddTicks(8746),
+                            DateCreated = new DateTime(2021, 8, 26, 22, 39, 33, 958, DateTimeKind.Local).AddTicks(7460),
+                            DateModified = new DateTime(2021, 8, 26, 22, 39, 33, 958, DateTimeKind.Local).AddTicks(7838),
                             ParentId = 0L,
                             Title = "Columns",
-                            Uuid = new Guid("a5334025-82f8-4322-a662-bcea5ab62155")
+                            Uuid = new Guid("7906aff9-9fdd-4d61-b247-36638d4e6778")
                         },
                         new
                         {
                             Id = 2L,
                             BlockType = "button",
                             CanHaveChildren = false,
-                            DateCreated = new DateTime(2021, 8, 22, 4, 6, 11, 921, DateTimeKind.Local).AddTicks(608),
-                            DateModified = new DateTime(2021, 8, 22, 4, 6, 11, 921, DateTimeKind.Local).AddTicks(630),
+                            DateCreated = new DateTime(2021, 8, 26, 22, 39, 33, 958, DateTimeKind.Local).AddTicks(9012),
+                            DateModified = new DateTime(2021, 8, 26, 22, 39, 33, 958, DateTimeKind.Local).AddTicks(9024),
                             ParentId = 0L,
                             Title = "Button",
-                            Uuid = new Guid("39530f11-ac8a-4896-8161-1e1fff4b4a11")
+                            Uuid = new Guid("48615ec2-373a-4434-b602-b79a658e44a9")
                         },
                         new
                         {
                             Id = 3L,
                             BlockType = "checkbox",
                             CanHaveChildren = false,
-                            DateCreated = new DateTime(2021, 8, 22, 4, 6, 11, 921, DateTimeKind.Local).AddTicks(637),
-                            DateModified = new DateTime(2021, 8, 22, 4, 6, 11, 921, DateTimeKind.Local).AddTicks(641),
+                            DateCreated = new DateTime(2021, 8, 26, 22, 39, 33, 958, DateTimeKind.Local).AddTicks(9029),
+                            DateModified = new DateTime(2021, 8, 26, 22, 39, 33, 958, DateTimeKind.Local).AddTicks(9032),
                             ParentId = 0L,
                             Title = "Checkbox",
-                            Uuid = new Guid("dd487984-13e3-489f-b20c-8cca82236970")
+                            Uuid = new Guid("9eaf3348-eaf6-4bc0-937d-0c04674b39ed")
                         },
                         new
                         {
                             Id = 4L,
                             BlockType = "checklist",
                             CanHaveChildren = false,
-                            DateCreated = new DateTime(2021, 8, 22, 4, 6, 11, 921, DateTimeKind.Local).AddTicks(647),
-                            DateModified = new DateTime(2021, 8, 22, 4, 6, 11, 921, DateTimeKind.Local).AddTicks(652),
+                            DateCreated = new DateTime(2021, 8, 26, 22, 39, 33, 958, DateTimeKind.Local).AddTicks(9035),
+                            DateModified = new DateTime(2021, 8, 26, 22, 39, 33, 958, DateTimeKind.Local).AddTicks(9038),
                             ParentId = 0L,
                             Title = "Checklist",
-                            Uuid = new Guid("19494b2f-657e-4105-af09-2fb07b44c98c")
+                            Uuid = new Guid("5ced95f3-4de5-4a16-80d2-8a9ed05f408e")
                         },
                         new
                         {
                             Id = 5L,
                             BlockType = "dataListGroup",
                             CanHaveChildren = false,
-                            DateCreated = new DateTime(2021, 8, 22, 4, 6, 11, 921, DateTimeKind.Local).AddTicks(658),
-                            DateModified = new DateTime(2021, 8, 22, 4, 6, 11, 921, DateTimeKind.Local).AddTicks(662),
+                            DateCreated = new DateTime(2021, 8, 26, 22, 39, 33, 958, DateTimeKind.Local).AddTicks(9042),
+                            DateModified = new DateTime(2021, 8, 26, 22, 39, 33, 958, DateTimeKind.Local).AddTicks(9044),
                             ParentId = 0L,
                             Title = "Data List Group",
-                            Uuid = new Guid("5e0cb0a1-3f78-405d-9b92-3a3f4d44aaca")
+                            Uuid = new Guid("d91974c0-dba3-4315-b555-9edde2e42ff9")
                         },
                         new
                         {
                             Id = 6L,
                             BlockType = "datePicker",
                             CanHaveChildren = false,
-                            DateCreated = new DateTime(2021, 8, 22, 4, 6, 11, 921, DateTimeKind.Local).AddTicks(667),
-                            DateModified = new DateTime(2021, 8, 22, 4, 6, 11, 921, DateTimeKind.Local).AddTicks(671),
+                            DateCreated = new DateTime(2021, 8, 26, 22, 39, 33, 958, DateTimeKind.Local).AddTicks(9048),
+                            DateModified = new DateTime(2021, 8, 26, 22, 39, 33, 958, DateTimeKind.Local).AddTicks(9051),
                             ParentId = 0L,
                             Title = "Date Picker",
-                            Uuid = new Guid("06cb0efa-75ed-4263-8cad-e98a609a3875")
+                            Uuid = new Guid("94085fae-fe47-4bfd-8572-1ca0a917cb6e")
                         },
                         new
                         {
                             Id = 7L,
                             BlockType = "divider",
                             CanHaveChildren = false,
-                            DateCreated = new DateTime(2021, 8, 22, 4, 6, 11, 921, DateTimeKind.Local).AddTicks(676),
-                            DateModified = new DateTime(2021, 8, 22, 4, 6, 11, 921, DateTimeKind.Local).AddTicks(680),
+                            DateCreated = new DateTime(2021, 8, 26, 22, 39, 33, 958, DateTimeKind.Local).AddTicks(9065),
+                            DateModified = new DateTime(2021, 8, 26, 22, 39, 33, 958, DateTimeKind.Local).AddTicks(9067),
                             ParentId = 0L,
                             Title = "Divider",
-                            Uuid = new Guid("64c7c960-6c1d-47ba-9c34-e5d885e64442")
+                            Uuid = new Guid("c283fe5a-c8e8-4bc2-ae94-63f14bc42119")
                         },
                         new
                         {
                             Id = 8L,
                             BlockType = "dropDown",
                             CanHaveChildren = false,
-                            DateCreated = new DateTime(2021, 8, 22, 4, 6, 11, 921, DateTimeKind.Local).AddTicks(702),
-                            DateModified = new DateTime(2021, 8, 22, 4, 6, 11, 921, DateTimeKind.Local).AddTicks(706),
+                            DateCreated = new DateTime(2021, 8, 26, 22, 39, 33, 958, DateTimeKind.Local).AddTicks(9072),
+                            DateModified = new DateTime(2021, 8, 26, 22, 39, 33, 958, DateTimeKind.Local).AddTicks(9074),
                             ParentId = 0L,
                             Title = "Drop-down",
-                            Uuid = new Guid("14bfb1ce-3e88-4a6d-b417-82a667317ceb")
+                            Uuid = new Guid("d5992241-7c7f-4ab6-abd7-28a28fbb31a3")
                         },
                         new
                         {
                             Id = 9L,
                             BlockType = "editableTable",
                             CanHaveChildren = false,
-                            DateCreated = new DateTime(2021, 8, 22, 4, 6, 11, 921, DateTimeKind.Local).AddTicks(712),
-                            DateModified = new DateTime(2021, 8, 22, 4, 6, 11, 921, DateTimeKind.Local).AddTicks(716),
+                            DateCreated = new DateTime(2021, 8, 26, 22, 39, 33, 958, DateTimeKind.Local).AddTicks(9078),
+                            DateModified = new DateTime(2021, 8, 26, 22, 39, 33, 958, DateTimeKind.Local).AddTicks(9080),
                             ParentId = 0L,
                             Title = "Editable Table",
-                            Uuid = new Guid("12dee6e5-d108-47d2-b668-4aa74e660221")
+                            Uuid = new Guid("82138da6-a17b-4cd0-9e20-02c34716509e")
                         },
                         new
                         {
                             Id = 10L,
                             BlockType = "fileUpload",
                             CanHaveChildren = false,
-                            DateCreated = new DateTime(2021, 8, 22, 4, 6, 11, 921, DateTimeKind.Local).AddTicks(722),
-                            DateModified = new DateTime(2021, 8, 22, 4, 6, 11, 921, DateTimeKind.Local).AddTicks(725),
+                            DateCreated = new DateTime(2021, 8, 26, 22, 39, 33, 958, DateTimeKind.Local).AddTicks(9085),
+                            DateModified = new DateTime(2021, 8, 26, 22, 39, 33, 958, DateTimeKind.Local).AddTicks(9087),
                             ParentId = 0L,
                             Title = "File Upload",
-                            Uuid = new Guid("dd74ffe4-3789-4e94-b87d-f245510ea2bb")
+                            Uuid = new Guid("f8b7aac5-d6ff-46ee-be4b-18274ec1242e")
                         },
                         new
                         {
                             Id = 11L,
                             BlockType = "heading",
                             CanHaveChildren = false,
-                            DateCreated = new DateTime(2021, 8, 22, 4, 6, 11, 921, DateTimeKind.Local).AddTicks(731),
-                            DateModified = new DateTime(2021, 8, 22, 4, 6, 11, 921, DateTimeKind.Local).AddTicks(735),
+                            DateCreated = new DateTime(2021, 8, 26, 22, 39, 33, 958, DateTimeKind.Local).AddTicks(9092),
+                            DateModified = new DateTime(2021, 8, 26, 22, 39, 33, 958, DateTimeKind.Local).AddTicks(9094),
                             ParentId = 0L,
                             Title = "heading",
-                            Uuid = new Guid("19d12993-29b3-4d9e-adae-8cf11a3a59be")
+                            Uuid = new Guid("b1d49402-7bcd-448b-ae7f-1e714927675e")
                         },
                         new
                         {
                             Id = 12L,
                             BlockType = "subHeading",
                             CanHaveChildren = false,
-                            DateCreated = new DateTime(2021, 8, 22, 4, 6, 11, 921, DateTimeKind.Local).AddTicks(740),
-                            DateModified = new DateTime(2021, 8, 22, 4, 6, 11, 921, DateTimeKind.Local).AddTicks(744),
+                            DateCreated = new DateTime(2021, 8, 26, 22, 39, 33, 958, DateTimeKind.Local).AddTicks(9098),
+                            DateModified = new DateTime(2021, 8, 26, 22, 39, 33, 958, DateTimeKind.Local).AddTicks(9101),
                             ParentId = 0L,
                             Title = "Sub-heading",
-                            Uuid = new Guid("5670114d-bb15-4d53-9c00-20503239b917")
+                            Uuid = new Guid("d07b879c-d999-42f5-ab34-21a5865def61")
                         },
                         new
                         {
                             Id = 13L,
                             BlockType = "listGroup",
                             CanHaveChildren = false,
-                            DateCreated = new DateTime(2021, 8, 22, 4, 6, 11, 921, DateTimeKind.Local).AddTicks(750),
-                            DateModified = new DateTime(2021, 8, 22, 4, 6, 11, 921, DateTimeKind.Local).AddTicks(754),
+                            DateCreated = new DateTime(2021, 8, 26, 22, 39, 33, 958, DateTimeKind.Local).AddTicks(9104),
+                            DateModified = new DateTime(2021, 8, 26, 22, 39, 33, 958, DateTimeKind.Local).AddTicks(9107),
                             ParentId = 0L,
                             Title = "List Group",
-                            Uuid = new Guid("c269ac9b-1011-4e1a-b6df-d0237cb9b64b")
+                            Uuid = new Guid("7b83ab9b-23a0-4bc0-a8cd-3349aa068665")
                         },
                         new
                         {
                             Id = 14L,
                             BlockType = "multiLineTextbox",
                             CanHaveChildren = false,
-                            DateCreated = new DateTime(2021, 8, 22, 4, 6, 11, 921, DateTimeKind.Local).AddTicks(759),
-                            DateModified = new DateTime(2021, 8, 22, 4, 6, 11, 921, DateTimeKind.Local).AddTicks(763),
+                            DateCreated = new DateTime(2021, 8, 26, 22, 39, 33, 958, DateTimeKind.Local).AddTicks(9111),
+                            DateModified = new DateTime(2021, 8, 26, 22, 39, 33, 958, DateTimeKind.Local).AddTicks(9114),
                             ParentId = 0L,
                             Title = "Multi-line Textbox",
-                            Uuid = new Guid("dfd4b5a7-c45b-4316-be65-a3284dd5dab2")
+                            Uuid = new Guid("b44c3b74-5ab5-492d-a95d-42c7ddc06f7f")
                         },
                         new
                         {
                             Id = 15L,
                             BlockType = "radioGroup",
                             CanHaveChildren = false,
-                            DateCreated = new DateTime(2021, 8, 22, 4, 6, 11, 921, DateTimeKind.Local).AddTicks(768),
-                            DateModified = new DateTime(2021, 8, 22, 4, 6, 11, 921, DateTimeKind.Local).AddTicks(772),
+                            DateCreated = new DateTime(2021, 8, 26, 22, 39, 33, 958, DateTimeKind.Local).AddTicks(9121),
+                            DateModified = new DateTime(2021, 8, 26, 22, 39, 33, 958, DateTimeKind.Local).AddTicks(9124),
                             ParentId = 0L,
                             Title = "Radio Group",
-                            Uuid = new Guid("fe713750-d1a2-402f-8592-9f821ce5b88a")
+                            Uuid = new Guid("757bf62f-b4c6-434d-8278-492e71ce0cfd")
                         },
                         new
                         {
                             Id = 16L,
                             BlockType = "signature",
                             CanHaveChildren = false,
-                            DateCreated = new DateTime(2021, 8, 22, 4, 6, 11, 921, DateTimeKind.Local).AddTicks(782),
-                            DateModified = new DateTime(2021, 8, 22, 4, 6, 11, 921, DateTimeKind.Local).AddTicks(786),
+                            DateCreated = new DateTime(2021, 8, 26, 22, 39, 33, 958, DateTimeKind.Local).AddTicks(9128),
+                            DateModified = new DateTime(2021, 8, 26, 22, 39, 33, 958, DateTimeKind.Local).AddTicks(9130),
                             ParentId = 0L,
                             Title = "Signature",
-                            Uuid = new Guid("3f9dfc63-080b-4ad6-9114-b02dea5f242a")
+                            Uuid = new Guid("74f374c0-8b83-47b6-9505-c0c09d4a0e49")
                         },
                         new
                         {
                             Id = 17L,
                             BlockType = "table",
                             CanHaveChildren = false,
-                            DateCreated = new DateTime(2021, 8, 22, 4, 6, 11, 921, DateTimeKind.Local).AddTicks(791),
-                            DateModified = new DateTime(2021, 8, 22, 4, 6, 11, 921, DateTimeKind.Local).AddTicks(795),
+                            DateCreated = new DateTime(2021, 8, 26, 22, 39, 33, 958, DateTimeKind.Local).AddTicks(9134),
+                            DateModified = new DateTime(2021, 8, 26, 22, 39, 33, 958, DateTimeKind.Local).AddTicks(9137),
                             ParentId = 0L,
                             Title = "Table",
-                            Uuid = new Guid("a41b634d-430c-4d92-8427-2a680cb25b6d")
+                            Uuid = new Guid("ac4efd38-73e0-4754-a1af-45b495d257fb")
                         },
                         new
                         {
                             Id = 18L,
                             BlockType = "textBlock",
                             CanHaveChildren = false,
-                            DateCreated = new DateTime(2021, 8, 22, 4, 6, 11, 921, DateTimeKind.Local).AddTicks(801),
-                            DateModified = new DateTime(2021, 8, 22, 4, 6, 11, 921, DateTimeKind.Local).AddTicks(805),
+                            DateCreated = new DateTime(2021, 8, 26, 22, 39, 33, 958, DateTimeKind.Local).AddTicks(9140),
+                            DateModified = new DateTime(2021, 8, 26, 22, 39, 33, 958, DateTimeKind.Local).AddTicks(9143),
                             ParentId = 0L,
                             Title = "Text Block",
-                            Uuid = new Guid("7af6ae34-9538-48cc-9717-7eafd01ea76c")
+                            Uuid = new Guid("43072c9e-646f-48cc-947b-b879d1b3f685")
                         },
                         new
                         {
                             Id = 19L,
                             BlockType = "textBox",
                             CanHaveChildren = false,
-                            DateCreated = new DateTime(2021, 8, 22, 4, 6, 11, 921, DateTimeKind.Local).AddTicks(810),
-                            DateModified = new DateTime(2021, 8, 22, 4, 6, 11, 921, DateTimeKind.Local).AddTicks(814),
+                            DateCreated = new DateTime(2021, 8, 26, 22, 39, 33, 958, DateTimeKind.Local).AddTicks(9147),
+                            DateModified = new DateTime(2021, 8, 26, 22, 39, 33, 958, DateTimeKind.Local).AddTicks(9150),
                             ParentId = 0L,
                             Title = "TextBox",
-                            Uuid = new Guid("23a60039-2e0a-4c26-800b-39f5493c5dfa")
+                            Uuid = new Guid("1ffa20f2-7254-473d-8d7d-1d71c6e66bc6")
                         },
                         new
                         {
                             Id = 20L,
                             BlockType = "timePicker",
                             CanHaveChildren = false,
-                            DateCreated = new DateTime(2021, 8, 22, 4, 6, 11, 921, DateTimeKind.Local).AddTicks(820),
-                            DateModified = new DateTime(2021, 8, 22, 4, 6, 11, 921, DateTimeKind.Local).AddTicks(823),
+                            DateCreated = new DateTime(2021, 8, 26, 22, 39, 33, 958, DateTimeKind.Local).AddTicks(9154),
+                            DateModified = new DateTime(2021, 8, 26, 22, 39, 33, 958, DateTimeKind.Local).AddTicks(9156),
                             ParentId = 0L,
                             Title = "Time Picker",
-                            Uuid = new Guid("9f68e62d-2f71-45eb-a2e5-acb938f50189")
+                            Uuid = new Guid("7f9b059d-bee6-4222-8610-58e191fa05fe")
                         },
                         new
                         {
                             Id = 21L,
                             BlockType = "toggleSwitch",
                             CanHaveChildren = false,
-                            DateCreated = new DateTime(2021, 8, 22, 4, 6, 11, 921, DateTimeKind.Local).AddTicks(829),
-                            DateModified = new DateTime(2021, 8, 22, 4, 6, 11, 921, DateTimeKind.Local).AddTicks(832),
+                            DateCreated = new DateTime(2021, 8, 26, 22, 39, 33, 958, DateTimeKind.Local).AddTicks(9160),
+                            DateModified = new DateTime(2021, 8, 26, 22, 39, 33, 958, DateTimeKind.Local).AddTicks(9163),
                             ParentId = 0L,
                             Title = "Toggle Switch",
-                            Uuid = new Guid("9dc6d17d-ab95-46f9-8095-c98fc0392a7a")
+                            Uuid = new Guid("914864f0-9642-4847-8dda-691f8569d3c4")
                         },
                         new
                         {
                             Id = 22L,
                             BlockType = "imageGallery",
                             CanHaveChildren = true,
-                            DateCreated = new DateTime(2021, 8, 22, 4, 6, 11, 921, DateTimeKind.Local).AddTicks(838),
-                            DateModified = new DateTime(2021, 8, 22, 4, 6, 11, 921, DateTimeKind.Local).AddTicks(842),
+                            DateCreated = new DateTime(2021, 8, 26, 22, 39, 33, 958, DateTimeKind.Local).AddTicks(9167),
+                            DateModified = new DateTime(2021, 8, 26, 22, 39, 33, 958, DateTimeKind.Local).AddTicks(9169),
                             ParentId = 0L,
                             Title = "Image Gallery",
-                            Uuid = new Guid("439dca28-7e88-45c3-ad96-c713fe782413")
+                            Uuid = new Guid("0523d1cb-8001-43bf-a678-51c1e51e8662")
                         },
                         new
                         {
                             Id = 23L,
                             BlockType = "image",
                             CanHaveChildren = false,
-                            DateCreated = new DateTime(2021, 8, 22, 4, 6, 11, 921, DateTimeKind.Local).AddTicks(847),
-                            DateModified = new DateTime(2021, 8, 22, 4, 6, 11, 921, DateTimeKind.Local).AddTicks(851),
+                            DateCreated = new DateTime(2021, 8, 26, 22, 39, 33, 958, DateTimeKind.Local).AddTicks(9176),
+                            DateModified = new DateTime(2021, 8, 26, 22, 39, 33, 958, DateTimeKind.Local).AddTicks(9179),
                             ParentId = 0L,
                             Title = "Image",
-                            Uuid = new Guid("d28509e8-590e-47e2-abbd-7904913325e0")
+                            Uuid = new Guid("ce5d1a3c-e10c-48f6-b34d-97f991345165")
                         },
                         new
                         {
                             Id = 24L,
                             BlockType = "imageLink",
                             CanHaveChildren = false,
-                            DateCreated = new DateTime(2021, 8, 22, 4, 6, 11, 921, DateTimeKind.Local).AddTicks(860),
-                            DateModified = new DateTime(2021, 8, 22, 4, 6, 11, 921, DateTimeKind.Local).AddTicks(864),
+                            DateCreated = new DateTime(2021, 8, 26, 22, 39, 33, 958, DateTimeKind.Local).AddTicks(9183),
+                            DateModified = new DateTime(2021, 8, 26, 22, 39, 33, 958, DateTimeKind.Local).AddTicks(9185),
                             ParentId = 0L,
                             Title = "Image Link",
-                            Uuid = new Guid("1c94af74-cd5f-44ce-8977-d13e866cf229")
+                            Uuid = new Guid("1fd4e5e2-bc71-431b-9e01-bb8962309241")
                         },
                         new
                         {
                             Id = 25L,
                             BlockType = "productGallery",
                             CanHaveChildren = true,
-                            DateCreated = new DateTime(2021, 8, 22, 4, 6, 11, 921, DateTimeKind.Local).AddTicks(869),
-                            DateModified = new DateTime(2021, 8, 22, 4, 6, 11, 921, DateTimeKind.Local).AddTicks(873),
+                            DateCreated = new DateTime(2021, 8, 26, 22, 39, 33, 958, DateTimeKind.Local).AddTicks(9189),
+                            DateModified = new DateTime(2021, 8, 26, 22, 39, 33, 958, DateTimeKind.Local).AddTicks(9192),
                             ParentId = 0L,
                             Title = "Product Listing",
-                            Uuid = new Guid("f0c982fd-f81c-46cf-819f-d6e77979361a")
+                            Uuid = new Guid("d12f06de-a888-4358-96d9-0869354681dc")
                         },
                         new
                         {
                             Id = 26L,
                             BlockType = "product",
                             CanHaveChildren = false,
-                            DateCreated = new DateTime(2021, 8, 22, 4, 6, 11, 921, DateTimeKind.Local).AddTicks(878),
-                            DateModified = new DateTime(2021, 8, 22, 4, 6, 11, 921, DateTimeKind.Local).AddTicks(882),
+                            DateCreated = new DateTime(2021, 8, 26, 22, 39, 33, 958, DateTimeKind.Local).AddTicks(9195),
+                            DateModified = new DateTime(2021, 8, 26, 22, 39, 33, 958, DateTimeKind.Local).AddTicks(9198),
                             ParentId = 0L,
                             Title = "Product",
-                            Uuid = new Guid("a3b6647a-96c8-47f6-88b7-e2e8f2cbe890")
+                            Uuid = new Guid("8ed708a6-486d-4a15-a4f9-be74cacec18c")
                         },
                         new
                         {
                             Id = 27L,
                             BlockType = "carousel",
                             CanHaveChildren = true,
-                            DateCreated = new DateTime(2021, 8, 22, 4, 6, 11, 921, DateTimeKind.Local).AddTicks(888),
-                            DateModified = new DateTime(2021, 8, 22, 4, 6, 11, 921, DateTimeKind.Local).AddTicks(892),
+                            DateCreated = new DateTime(2021, 8, 26, 22, 39, 33, 958, DateTimeKind.Local).AddTicks(9202),
+                            DateModified = new DateTime(2021, 8, 26, 22, 39, 33, 958, DateTimeKind.Local).AddTicks(9204),
                             ParentId = 0L,
                             Title = "Carousel",
-                            Uuid = new Guid("2061db41-5a41-497a-93e9-10bffbee2baf")
+                            Uuid = new Guid("a2c22e69-afb8-482a-a256-ba237b29f319")
                         },
                         new
                         {
                             Id = 28L,
                             BlockType = "carouselItem",
                             CanHaveChildren = true,
-                            DateCreated = new DateTime(2021, 8, 22, 4, 6, 11, 921, DateTimeKind.Local).AddTicks(897),
-                            DateModified = new DateTime(2021, 8, 22, 4, 6, 11, 921, DateTimeKind.Local).AddTicks(901),
+                            DateCreated = new DateTime(2021, 8, 26, 22, 39, 33, 958, DateTimeKind.Local).AddTicks(9208),
+                            DateModified = new DateTime(2021, 8, 26, 22, 39, 33, 958, DateTimeKind.Local).AddTicks(9211),
                             ParentId = 0L,
                             Title = "Carousel Item",
-                            Uuid = new Guid("b369c89e-d693-4ff4-8e05-b52c3c66f46f")
+                            Uuid = new Guid("ec008e5c-1449-4c76-9263-1c8ed14c78bb")
                         },
                         new
                         {
                             Id = 29L,
                             BlockType = "login",
                             CanHaveChildren = false,
-                            DateCreated = new DateTime(2021, 8, 22, 4, 6, 11, 921, DateTimeKind.Local).AddTicks(906),
-                            DateModified = new DateTime(2021, 8, 22, 4, 6, 11, 921, DateTimeKind.Local).AddTicks(910),
+                            DateCreated = new DateTime(2021, 8, 26, 22, 39, 33, 958, DateTimeKind.Local).AddTicks(9215),
+                            DateModified = new DateTime(2021, 8, 26, 22, 39, 33, 958, DateTimeKind.Local).AddTicks(9217),
                             ParentId = 0L,
                             Title = "Login",
-                            Uuid = new Guid("c456e0df-808d-411b-8487-095f21809cf8")
+                            Uuid = new Guid("090b7b7a-12f4-47a6-a72c-cbefc5a4f60e")
                         },
                         new
                         {
                             Id = 30L,
                             BlockType = "registration",
                             CanHaveChildren = false,
-                            DateCreated = new DateTime(2021, 8, 22, 4, 6, 11, 921, DateTimeKind.Local).AddTicks(915),
-                            DateModified = new DateTime(2021, 8, 22, 4, 6, 11, 921, DateTimeKind.Local).AddTicks(919),
+                            DateCreated = new DateTime(2021, 8, 26, 22, 39, 33, 958, DateTimeKind.Local).AddTicks(9221),
+                            DateModified = new DateTime(2021, 8, 26, 22, 39, 33, 958, DateTimeKind.Local).AddTicks(9224),
                             ParentId = 0L,
                             Title = "Registration",
-                            Uuid = new Guid("54c56227-6261-4c10-a155-e85f787e99d0")
+                            Uuid = new Guid("ec401c00-da5f-4970-b5ef-0e1be8c73bdb")
                         },
                         new
                         {
                             Id = 31L,
                             BlockType = "shoppingBasket",
                             CanHaveChildren = false,
-                            DateCreated = new DateTime(2021, 8, 22, 4, 6, 11, 921, DateTimeKind.Local).AddTicks(924),
-                            DateModified = new DateTime(2021, 8, 22, 4, 6, 11, 921, DateTimeKind.Local).AddTicks(928),
+                            DateCreated = new DateTime(2021, 8, 26, 22, 39, 33, 958, DateTimeKind.Local).AddTicks(9230),
+                            DateModified = new DateTime(2021, 8, 26, 22, 39, 33, 958, DateTimeKind.Local).AddTicks(9233),
                             ParentId = 0L,
                             Title = "Shopping Basket",
-                            Uuid = new Guid("85c66164-719a-4caf-8631-a431ae6101c8")
+                            Uuid = new Guid("021ab399-599a-4fd1-b3d8-e26b4f97025e")
                         },
                         new
                         {
                             Id = 32L,
                             BlockType = "checkout",
                             CanHaveChildren = false,
-                            DateCreated = new DateTime(2021, 8, 22, 4, 6, 11, 921, DateTimeKind.Local).AddTicks(937),
-                            DateModified = new DateTime(2021, 8, 22, 4, 6, 11, 921, DateTimeKind.Local).AddTicks(941),
+                            DateCreated = new DateTime(2021, 8, 26, 22, 39, 33, 958, DateTimeKind.Local).AddTicks(9236),
+                            DateModified = new DateTime(2021, 8, 26, 22, 39, 33, 958, DateTimeKind.Local).AddTicks(9239),
                             ParentId = 0L,
                             Title = "Checkout",
-                            Uuid = new Guid("b76a9951-7b2e-4033-afd3-66d14c03d682")
+                            Uuid = new Guid("4651c814-52a7-4696-b3d8-a79e4be6fa01")
                         },
                         new
                         {
                             Id = 33L,
                             BlockType = "search",
                             CanHaveChildren = false,
-                            DateCreated = new DateTime(2021, 8, 22, 4, 6, 11, 921, DateTimeKind.Local).AddTicks(946),
-                            DateModified = new DateTime(2021, 8, 22, 4, 6, 11, 921, DateTimeKind.Local).AddTicks(950),
+                            DateCreated = new DateTime(2021, 8, 26, 22, 39, 33, 958, DateTimeKind.Local).AddTicks(9243),
+                            DateModified = new DateTime(2021, 8, 26, 22, 39, 33, 958, DateTimeKind.Local).AddTicks(9245),
                             ParentId = 0L,
                             Title = "Search",
-                            Uuid = new Guid("9e0783e4-32a8-4ac2-823f-82243d6bb7cb")
+                            Uuid = new Guid("f5e2e383-3b7b-4453-b7d0-53a0c70355da")
                         },
                         new
                         {
                             Id = 34L,
                             BlockType = "searchItem",
                             CanHaveChildren = false,
-                            DateCreated = new DateTime(2021, 8, 22, 4, 6, 11, 921, DateTimeKind.Local).AddTicks(955),
-                            DateModified = new DateTime(2021, 8, 22, 4, 6, 11, 921, DateTimeKind.Local).AddTicks(959),
+                            DateCreated = new DateTime(2021, 8, 26, 22, 39, 33, 958, DateTimeKind.Local).AddTicks(9249),
+                            DateModified = new DateTime(2021, 8, 26, 22, 39, 33, 958, DateTimeKind.Local).AddTicks(9252),
                             ParentId = 0L,
                             Title = "Search Item",
-                            Uuid = new Guid("40abc6ec-89fe-47b9-b778-e87283eed082")
+                            Uuid = new Guid("a3132e7c-e80c-47d3-88db-df4b14b1f6ec")
                         },
                         new
                         {
                             Id = 35L,
                             BlockType = "card",
                             CanHaveChildren = true,
-                            DateCreated = new DateTime(2021, 8, 22, 4, 6, 11, 921, DateTimeKind.Local).AddTicks(965),
-                            DateModified = new DateTime(2021, 8, 22, 4, 6, 11, 921, DateTimeKind.Local).AddTicks(968),
+                            DateCreated = new DateTime(2021, 8, 26, 22, 39, 33, 958, DateTimeKind.Local).AddTicks(9256),
+                            DateModified = new DateTime(2021, 8, 26, 22, 39, 33, 958, DateTimeKind.Local).AddTicks(9258),
                             ParentId = 0L,
                             Title = "Card",
-                            Uuid = new Guid("f5c5e200-ca81-4a83-96f6-13a2d7d21cc2")
+                            Uuid = new Guid("9ea280cf-827e-404e-a8e3-195c20eaa205")
+                        },
+                        new
+                        {
+                            Id = 36L,
+                            BlockType = "rowContainer",
+                            CanHaveChildren = true,
+                            DateCreated = new DateTime(2021, 8, 26, 22, 39, 33, 958, DateTimeKind.Local).AddTicks(9262),
+                            DateModified = new DateTime(2021, 8, 26, 22, 39, 33, 958, DateTimeKind.Local).AddTicks(9265),
+                            ParentId = 0L,
+                            Title = "Row",
+                            Uuid = new Guid("44bafd5d-d789-4327-bae3-90e175d75336")
                         });
                 });
 
@@ -482,7 +493,6 @@ namespace Superjack.MultiSites.Api.Migrations
                         .HasColumnName("Uuid");
 
                     b.Property<string>("Value")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)")
                         .HasColumnName("Value");
 
@@ -494,41 +504,31 @@ namespace Superjack.MultiSites.Api.Migrations
                         new
                         {
                             Id = 1L,
-                            BlockId = 1L,
-                            DataType = "int",
+                            BlockId = 2L,
+                            DataType = "string",
                             SortOrder = 0L,
-                            Title = "numberOfColumns",
-                            Uuid = new Guid("adea54c7-0282-411b-87ce-022aa17e1f6f"),
-                            Value = "1"
+                            Title = "type",
+                            Uuid = new Guid("eb273b0f-0be0-492d-8fe8-7d70a3b2481f"),
+                            Value = "button"
                         },
                         new
                         {
                             Id = 2L,
                             BlockId = 2L,
                             DataType = "string",
-                            SortOrder = 0L,
-                            Title = "type",
-                            Uuid = new Guid("e4f3dc2d-b421-4485-b591-bbdabe6dbd73"),
-                            Value = "button"
+                            SortOrder = 1L,
+                            Title = "text",
+                            Uuid = new Guid("4a5f2ecf-b460-4c29-8723-16b653fb113e"),
+                            Value = "Click"
                         },
                         new
                         {
                             Id = 3L,
                             BlockId = 2L,
                             DataType = "string",
-                            SortOrder = 1L,
-                            Title = "text",
-                            Uuid = new Guid("526c2da6-0630-4328-ab6a-9e85c7db6c92"),
-                            Value = "Click"
-                        },
-                        new
-                        {
-                            Id = 4L,
-                            BlockId = 2L,
-                            DataType = "string",
                             SortOrder = 2L,
                             Title = "class",
-                            Uuid = new Guid("6f973fd0-4656-481f-8c49-5a8e9f3fc9e7"),
+                            Uuid = new Guid("a62ab556-5d7f-42eb-8891-3077015c7834"),
                             Value = "btn"
                         });
                 });
@@ -574,17 +574,14 @@ namespace Superjack.MultiSites.Api.Migrations
                         .HasColumnName("Level");
 
                     b.Property<string>("MetaDescription")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)")
                         .HasColumnName("MetaDescription");
 
                     b.Property<string>("MetaKeywords")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)")
                         .HasColumnName("MetaKeywords");
 
                     b.Property<string>("NavigationTitle")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)")
                         .HasColumnName("NavigationTitle");
 
@@ -600,7 +597,6 @@ namespace Superjack.MultiSites.Api.Migrations
                         .HasColumnName("PageTypeId");
 
                     b.Property<string>("ParentPageIdentifier")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)")
                         .HasColumnName("ParentPageIdentifier");
 
@@ -626,6 +622,10 @@ namespace Superjack.MultiSites.Api.Migrations
                         .HasColumnType("nvarchar(max)")
                         .HasColumnName("Title");
 
+                    b.Property<Guid>("Uuid")
+                        .HasColumnType("uniqueidentifier")
+                        .HasColumnName("Uuid");
+
                     b.HasKey("Id");
 
                     b.ToTable("Pages");
@@ -635,177 +635,185 @@ namespace Superjack.MultiSites.Api.Migrations
                         {
                             Id = 1L,
                             Binned = false,
-                            DateCreated = new DateTime(2021, 8, 22, 4, 6, 11, 926, DateTimeKind.Local).AddTicks(7111),
-                            DateModified = new DateTime(2021, 8, 22, 4, 6, 11, 926, DateTimeKind.Local).AddTicks(7457),
-                            DateScheduledPublish = new DateTime(2021, 8, 18, 4, 6, 11, 926, DateTimeKind.Local).AddTicks(7785),
+                            DateCreated = new DateTime(2021, 8, 26, 22, 39, 33, 963, DateTimeKind.Local).AddTicks(8726),
+                            DateModified = new DateTime(2021, 8, 26, 22, 39, 33, 963, DateTimeKind.Local).AddTicks(9058),
+                            DateScheduledPublish = new DateTime(2021, 8, 22, 22, 39, 33, 963, DateTimeKind.Local).AddTicks(9367),
                             Disabled = false,
                             Draft = false,
                             Level = 0,
                             MetaDescription = "",
                             MetaKeywords = "",
                             NavigationTitle = "Home",
-                            PageIdentifier = "90686b10-a30a-4d7d-b942-fc752494af83",
+                            PageIdentifier = "9b9f70f6-d828-4aa0-a363-219ecaf55a98",
                             PageTypeId = "Root",
-                            ParentPageIdentifier = "90686b10-a30a-4d7d-b942-fc752494af83",
+                            ParentPageIdentifier = "9b9f70f6-d828-4aa0-a363-219ecaf55a98",
                             Published = true,
                             Route = "/",
                             SiteId = 1L,
                             SortOrder = 0L,
-                            Title = "Home"
+                            Title = "Home",
+                            Uuid = new Guid("634ac125-9558-4e4e-b069-4d1a8590802f")
                         },
                         new
                         {
                             Id = 2L,
                             Binned = false,
-                            DateCreated = new DateTime(2021, 8, 22, 4, 6, 11, 927, DateTimeKind.Local).AddTicks(2180),
-                            DateModified = new DateTime(2021, 8, 22, 4, 6, 11, 927, DateTimeKind.Local).AddTicks(2197),
-                            DateScheduledPublish = new DateTime(2021, 8, 22, 4, 6, 11, 927, DateTimeKind.Local).AddTicks(2200),
+                            DateCreated = new DateTime(2021, 8, 26, 22, 39, 33, 964, DateTimeKind.Local).AddTicks(3500),
+                            DateModified = new DateTime(2021, 8, 26, 22, 39, 33, 964, DateTimeKind.Local).AddTicks(3514),
+                            DateScheduledPublish = new DateTime(2021, 8, 26, 22, 39, 33, 964, DateTimeKind.Local).AddTicks(3517),
                             Disabled = false,
                             Draft = false,
                             Level = 1,
                             MetaDescription = "",
                             MetaKeywords = "",
                             NavigationTitle = "Portfolio",
-                            PageIdentifier = "b178a0db-2358-41be-9dbe-350c41e459c8",
+                            PageIdentifier = "bce6ab55-0fc2-4b61-ae68-4785e52c1a42",
                             PageTypeId = "StandardPage",
-                            ParentPageIdentifier = "90686b10-a30a-4d7d-b942-fc752494af83",
+                            ParentPageIdentifier = "9b9f70f6-d828-4aa0-a363-219ecaf55a98",
                             Published = true,
                             Route = "/portfolio",
                             SiteId = 1L,
                             SortOrder = 1L,
-                            Title = "Portfolio"
+                            Title = "Portfolio",
+                            Uuid = new Guid("4022ccd7-497f-40f4-a879-c32bc53e51d1")
                         },
                         new
                         {
                             Id = 3L,
                             Binned = false,
-                            DateCreated = new DateTime(2021, 8, 22, 4, 6, 11, 927, DateTimeKind.Local).AddTicks(2206),
-                            DateModified = new DateTime(2021, 8, 22, 4, 6, 11, 927, DateTimeKind.Local).AddTicks(2209),
-                            DateScheduledPublish = new DateTime(2021, 8, 22, 4, 6, 11, 927, DateTimeKind.Local).AddTicks(2211),
+                            DateCreated = new DateTime(2021, 8, 26, 22, 39, 33, 964, DateTimeKind.Local).AddTicks(3525),
+                            DateModified = new DateTime(2021, 8, 26, 22, 39, 33, 964, DateTimeKind.Local).AddTicks(3528),
+                            DateScheduledPublish = new DateTime(2021, 8, 26, 22, 39, 33, 964, DateTimeKind.Local).AddTicks(3530),
                             Disabled = false,
                             Draft = false,
                             Level = 2,
                             MetaDescription = "",
                             MetaKeywords = "",
                             NavigationTitle = "Regulatory Services",
-                            PageIdentifier = "ca6e865f-ecaf-420b-91b7-ba54eebc8588",
+                            PageIdentifier = "1cd014c0-9db4-4deb-99d0-9505330b707c",
                             PageTypeId = "StandardPage",
-                            ParentPageIdentifier = "b178a0db-2358-41be-9dbe-350c41e459c8",
+                            ParentPageIdentifier = "bce6ab55-0fc2-4b61-ae68-4785e52c1a42",
                             Published = true,
                             Route = "/portfolio/regulatory-services",
                             SiteId = 1L,
                             SortOrder = 0L,
-                            Title = "Regulatory Services"
+                            Title = "Regulatory Services",
+                            Uuid = new Guid("8e044a66-5423-4417-9c51-5a30a89e9040")
                         },
                         new
                         {
                             Id = 4L,
                             Binned = false,
-                            DateCreated = new DateTime(2021, 8, 22, 4, 6, 11, 927, DateTimeKind.Local).AddTicks(2216),
-                            DateModified = new DateTime(2021, 8, 22, 4, 6, 11, 927, DateTimeKind.Local).AddTicks(2219),
-                            DateScheduledPublish = new DateTime(2021, 8, 22, 4, 6, 11, 927, DateTimeKind.Local).AddTicks(2221),
+                            DateCreated = new DateTime(2021, 8, 26, 22, 39, 33, 964, DateTimeKind.Local).AddTicks(3535),
+                            DateModified = new DateTime(2021, 8, 26, 22, 39, 33, 964, DateTimeKind.Local).AddTicks(3538),
+                            DateScheduledPublish = new DateTime(2021, 8, 26, 22, 39, 33, 964, DateTimeKind.Local).AddTicks(3541),
                             Disabled = false,
                             Draft = false,
                             Level = 1,
                             MetaDescription = "",
                             MetaKeywords = "",
                             NavigationTitle = "About",
-                            PageIdentifier = "d6f73c6b-da4f-475f-931a-0f8f3aa15c58",
+                            PageIdentifier = "78fdd3d9-1e1e-41c2-80d1-288edfbb3393",
                             PageTypeId = "StandardPage",
-                            ParentPageIdentifier = "90686b10-a30a-4d7d-b942-fc752494af83",
+                            ParentPageIdentifier = "9b9f70f6-d828-4aa0-a363-219ecaf55a98",
                             Published = true,
                             Route = "/about",
                             SiteId = 1L,
                             SortOrder = 0L,
-                            Title = "About"
+                            Title = "About",
+                            Uuid = new Guid("7c362f0b-75f4-4717-b83b-89fbc911cee1")
                         },
                         new
                         {
                             Id = 5L,
                             Binned = false,
-                            DateCreated = new DateTime(2021, 8, 22, 4, 6, 11, 927, DateTimeKind.Local).AddTicks(2225),
-                            DateModified = new DateTime(2021, 8, 22, 4, 6, 11, 927, DateTimeKind.Local).AddTicks(2228),
-                            DateScheduledPublish = new DateTime(2021, 8, 22, 4, 6, 11, 927, DateTimeKind.Local).AddTicks(2230),
+                            DateCreated = new DateTime(2021, 8, 26, 22, 39, 33, 964, DateTimeKind.Local).AddTicks(3546),
+                            DateModified = new DateTime(2021, 8, 26, 22, 39, 33, 964, DateTimeKind.Local).AddTicks(3549),
+                            DateScheduledPublish = new DateTime(2021, 8, 26, 22, 39, 33, 964, DateTimeKind.Local).AddTicks(3551),
                             Disabled = false,
                             Draft = false,
                             Level = 1,
                             MetaDescription = "",
                             MetaKeywords = "",
                             NavigationTitle = "Contact",
-                            PageIdentifier = "053ddd1a-6bd1-4ac0-b3a8-406e55232639",
+                            PageIdentifier = "26970072-f1fa-4d96-b39b-7ef42f4a8b10",
                             PageTypeId = "StandardPage",
-                            ParentPageIdentifier = "90686b10-a30a-4d7d-b942-fc752494af83",
+                            ParentPageIdentifier = "9b9f70f6-d828-4aa0-a363-219ecaf55a98",
                             Published = true,
                             Route = "/contact",
                             SiteId = 1L,
                             SortOrder = 2L,
-                            Title = "Contact"
+                            Title = "Contact",
+                            Uuid = new Guid("3b0516dd-cc52-48a0-a313-12e772327f1e")
                         },
                         new
                         {
                             Id = 6L,
                             Binned = false,
-                            DateCreated = new DateTime(2021, 8, 22, 4, 6, 11, 927, DateTimeKind.Local).AddTicks(2235),
-                            DateModified = new DateTime(2021, 8, 22, 4, 6, 11, 927, DateTimeKind.Local).AddTicks(2237),
-                            DateScheduledPublish = new DateTime(2021, 8, 19, 4, 6, 11, 927, DateTimeKind.Local).AddTicks(2240),
+                            DateCreated = new DateTime(2021, 8, 26, 22, 39, 33, 964, DateTimeKind.Local).AddTicks(3556),
+                            DateModified = new DateTime(2021, 8, 26, 22, 39, 33, 964, DateTimeKind.Local).AddTicks(3559),
+                            DateScheduledPublish = new DateTime(2021, 8, 23, 22, 39, 33, 964, DateTimeKind.Local).AddTicks(3561),
                             Disabled = false,
                             Draft = false,
                             Level = 0,
                             MetaDescription = "",
                             MetaKeywords = "",
                             NavigationTitle = "Home",
-                            PageIdentifier = "90686b10-a30a-4d7d-b942-fc752494af83",
+                            PageIdentifier = "9b9f70f6-d828-4aa0-a363-219ecaf55a98",
                             PageTypeId = "Root",
-                            ParentPageIdentifier = "90686b10-a30a-4d7d-b942-fc752494af83",
+                            ParentPageIdentifier = "9b9f70f6-d828-4aa0-a363-219ecaf55a98",
                             Published = true,
                             Route = "/",
                             SiteId = 1L,
                             SortOrder = 0L,
-                            Title = "Home"
+                            Title = "Home",
+                            Uuid = new Guid("05316ec4-d42e-47c0-8017-76098aef102f")
                         },
                         new
                         {
                             Id = 7L,
                             Binned = false,
-                            DateCreated = new DateTime(2021, 8, 22, 4, 6, 11, 927, DateTimeKind.Local).AddTicks(2245),
-                            DateModified = new DateTime(2021, 8, 22, 4, 6, 11, 927, DateTimeKind.Local).AddTicks(2247),
-                            DateScheduledExpiry = new DateTime(2021, 8, 21, 4, 6, 11, 927, DateTimeKind.Local).AddTicks(2253),
-                            DateScheduledPublish = new DateTime(2021, 8, 20, 4, 6, 11, 927, DateTimeKind.Local).AddTicks(2250),
+                            DateCreated = new DateTime(2021, 8, 26, 22, 39, 33, 964, DateTimeKind.Local).AddTicks(3567),
+                            DateModified = new DateTime(2021, 8, 26, 22, 39, 33, 964, DateTimeKind.Local).AddTicks(3570),
+                            DateScheduledExpiry = new DateTime(2021, 8, 25, 22, 39, 33, 964, DateTimeKind.Local).AddTicks(3575),
+                            DateScheduledPublish = new DateTime(2021, 8, 24, 22, 39, 33, 964, DateTimeKind.Local).AddTicks(3572),
                             Disabled = false,
                             Draft = false,
                             Level = 0,
                             MetaDescription = "",
                             MetaKeywords = "",
                             NavigationTitle = "Home",
-                            PageIdentifier = "90686b10-a30a-4d7d-b942-fc752494af83",
+                            PageIdentifier = "9b9f70f6-d828-4aa0-a363-219ecaf55a98",
                             PageTypeId = "Root",
-                            ParentPageIdentifier = "90686b10-a30a-4d7d-b942-fc752494af83",
+                            ParentPageIdentifier = "9b9f70f6-d828-4aa0-a363-219ecaf55a98",
                             Published = true,
                             Route = "/",
                             SiteId = 1L,
                             SortOrder = 0L,
-                            Title = "Home"
+                            Title = "Home",
+                            Uuid = new Guid("8e6f4d54-18e6-4df8-b1b6-1fbe5082d07f")
                         },
                         new
                         {
                             Id = 8L,
                             Binned = false,
-                            DateCreated = new DateTime(2021, 8, 22, 4, 6, 11, 927, DateTimeKind.Local).AddTicks(2257),
-                            DateModified = new DateTime(2021, 8, 22, 4, 6, 11, 927, DateTimeKind.Local).AddTicks(2260),
+                            DateCreated = new DateTime(2021, 8, 26, 22, 39, 33, 964, DateTimeKind.Local).AddTicks(3580),
+                            DateModified = new DateTime(2021, 8, 26, 22, 39, 33, 964, DateTimeKind.Local).AddTicks(3583),
                             Disabled = false,
                             Draft = true,
                             Level = 0,
                             MetaDescription = "",
                             MetaKeywords = "",
                             NavigationTitle = "Home",
-                            PageIdentifier = "90686b10-a30a-4d7d-b942-fc752494af83",
+                            PageIdentifier = "9b9f70f6-d828-4aa0-a363-219ecaf55a98",
                             PageTypeId = "Root",
-                            ParentPageIdentifier = "90686b10-a30a-4d7d-b942-fc752494af83",
+                            ParentPageIdentifier = "9b9f70f6-d828-4aa0-a363-219ecaf55a98",
                             Published = false,
                             Route = "/",
                             SiteId = 1L,
                             SortOrder = 0L,
-                            Title = "Home"
+                            Title = "Home",
+                            Uuid = new Guid("ee4a174d-4c54-4fc5-abe6-13b91b97f04c")
                         });
                 });
 
@@ -821,6 +829,10 @@ namespace Superjack.MultiSites.Api.Migrations
                         .HasColumnType("bigint")
                         .HasColumnName("BlockId");
 
+                    b.Property<int>("Level")
+                        .HasColumnType("int")
+                        .HasColumnName("Level");
+
                     b.Property<long>("PageId")
                         .HasColumnType("bigint")
                         .HasColumnName("PageId");
@@ -833,6 +845,10 @@ namespace Superjack.MultiSites.Api.Migrations
                         .HasColumnType("bigint")
                         .HasColumnName("SortOrder");
 
+                    b.Property<Guid>("Uuid")
+                        .HasColumnType("uniqueidentifier")
+                        .HasColumnName("Uuid");
+
                     b.HasKey("Id");
 
                     b.ToTable("PageBlocks");
@@ -841,10 +857,52 @@ namespace Superjack.MultiSites.Api.Migrations
                         new
                         {
                             Id = 1L,
-                            BlockId = 1L,
-                            PageId = 1L,
+                            BlockId = 36L,
+                            Level = 0,
+                            PageId = 8L,
                             ParentId = 0L,
-                            SortOrder = 0L
+                            SortOrder = 0L,
+                            Uuid = new Guid("b4d486d3-221a-4849-b403-6b3e5443636e")
+                        },
+                        new
+                        {
+                            Id = 2L,
+                            BlockId = 1L,
+                            Level = 1,
+                            PageId = 8L,
+                            ParentId = 1L,
+                            SortOrder = 0L,
+                            Uuid = new Guid("78aef83c-07cf-4e8b-aa2a-c80bc27a1a3d")
+                        },
+                        new
+                        {
+                            Id = 3L,
+                            BlockId = 1L,
+                            Level = 1,
+                            PageId = 8L,
+                            ParentId = 1L,
+                            SortOrder = 1L,
+                            Uuid = new Guid("d7296de8-0002-43cb-9f8b-b7e3a1588eac")
+                        },
+                        new
+                        {
+                            Id = 4L,
+                            BlockId = 1L,
+                            Level = 1,
+                            PageId = 8L,
+                            ParentId = 1L,
+                            SortOrder = 2L,
+                            Uuid = new Guid("f0dbc306-c303-46a9-ac38-24a213de2ede")
+                        },
+                        new
+                        {
+                            Id = 5L,
+                            BlockId = 2L,
+                            Level = 2,
+                            PageId = 8L,
+                            ParentId = 4L,
+                            SortOrder = 0L,
+                            Uuid = new Guid("f86e19a1-571b-455a-8c70-5099822a44c9")
                         });
                 });
 
@@ -861,7 +919,7 @@ namespace Superjack.MultiSites.Api.Migrations
                         .HasColumnType("nvarchar(max)")
                         .HasColumnName("DataType");
 
-                    b.Property<long>("FieldId")
+                    b.Property<long?>("FieldId")
                         .HasColumnType("bigint")
                         .HasColumnName("FieldId");
 
@@ -878,8 +936,11 @@ namespace Superjack.MultiSites.Api.Migrations
                         .HasColumnType("nvarchar(max)")
                         .HasColumnName("Title");
 
+                    b.Property<Guid>("Uuid")
+                        .HasColumnType("uniqueidentifier")
+                        .HasColumnName("Uuid");
+
                     b.Property<string>("Value")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)")
                         .HasColumnName("Value");
 
@@ -891,12 +952,45 @@ namespace Superjack.MultiSites.Api.Migrations
                         new
                         {
                             Id = 1L,
-                            DataType = "int",
+                            DataType = "string",
                             FieldId = 1L,
-                            PageBlockId = 1L,
+                            PageBlockId = 5L,
                             SortOrder = 0L,
-                            Title = "Number of Columns",
-                            Value = "3"
+                            Title = "type",
+                            Uuid = new Guid("b77615d2-170c-4f74-b300-bac139b2325f"),
+                            Value = "button"
+                        },
+                        new
+                        {
+                            Id = 2L,
+                            DataType = "string",
+                            FieldId = 2L,
+                            PageBlockId = 5L,
+                            SortOrder = 1L,
+                            Title = "text",
+                            Uuid = new Guid("7ccc5cd7-0513-40da-b49c-a5d1d33ecba5"),
+                            Value = "Save and continue"
+                        },
+                        new
+                        {
+                            Id = 3L,
+                            DataType = "string",
+                            FieldId = 3L,
+                            PageBlockId = 5L,
+                            SortOrder = 2L,
+                            Title = "class",
+                            Uuid = new Guid("1c89816d-7fb2-48b8-a2e6-51e9e7718b3f"),
+                            Value = "btn btn-success"
+                        },
+                        new
+                        {
+                            Id = 4L,
+                            DataType = "string",
+                            PageBlockId = 5L,
+                            SortOrder = 3L,
+                            Title = "icon",
+                            Uuid = new Guid("e64d597c-0bd3-421a-b96b-8268a2b28a17"),
+                            Value = "fas fa-check"
                         });
                 });
 
@@ -925,85 +1019,85 @@ namespace Superjack.MultiSites.Api.Migrations
                         {
                             Id = "Root",
                             Body = "{\"useBlocks\": true, \"title\": \"Homepage\"}",
-                            DateCreated = new DateTime(2021, 8, 22, 4, 6, 11, 916, DateTimeKind.Local).AddTicks(487)
+                            DateCreated = new DateTime(2021, 8, 26, 22, 39, 33, 954, DateTimeKind.Local).AddTicks(6999)
                         },
                         new
                         {
                             Id = "StandardPage",
                             Body = "{\"useBlocks\": true, \"title\": \"Standard Page\"}",
-                            DateCreated = new DateTime(2021, 8, 22, 4, 6, 11, 918, DateTimeKind.Local).AddTicks(6915)
+                            DateCreated = new DateTime(2021, 8, 26, 22, 39, 33, 957, DateTimeKind.Local).AddTicks(2331)
                         },
                         new
                         {
                             Id = "ProductList",
                             Body = "{\"useBlocks\": true, \"title\": \"Product List\"}",
-                            DateCreated = new DateTime(2021, 8, 22, 4, 6, 11, 918, DateTimeKind.Local).AddTicks(6979)
+                            DateCreated = new DateTime(2021, 8, 26, 22, 39, 33, 957, DateTimeKind.Local).AddTicks(2366)
                         },
                         new
                         {
                             Id = "ProductDetail",
                             Body = "{\"useBlocks\": true, \"title\": \"ProductDetail\"}",
-                            DateCreated = new DateTime(2021, 8, 22, 4, 6, 11, 918, DateTimeKind.Local).AddTicks(6985)
+                            DateCreated = new DateTime(2021, 8, 26, 22, 39, 33, 957, DateTimeKind.Local).AddTicks(2370)
                         },
                         new
                         {
                             Id = "EventList",
                             Body = "{\"useBlocks\": true, \"title\": \"Event List\"}",
-                            DateCreated = new DateTime(2021, 8, 22, 4, 6, 11, 918, DateTimeKind.Local).AddTicks(6991)
+                            DateCreated = new DateTime(2021, 8, 26, 22, 39, 33, 957, DateTimeKind.Local).AddTicks(2373)
                         },
                         new
                         {
                             Id = "EventDetail",
                             Body = "{\"useBlocks\": true, \"title\": \"Event Detail\"}",
-                            DateCreated = new DateTime(2021, 8, 22, 4, 6, 11, 918, DateTimeKind.Local).AddTicks(6996)
+                            DateCreated = new DateTime(2021, 8, 26, 22, 39, 33, 957, DateTimeKind.Local).AddTicks(2377)
                         },
                         new
                         {
                             Id = "ArticleList",
                             Body = "{\"useBlocks\": true, \"title\": \"Article List\"}",
-                            DateCreated = new DateTime(2021, 8, 22, 4, 6, 11, 918, DateTimeKind.Local).AddTicks(7001)
+                            DateCreated = new DateTime(2021, 8, 26, 22, 39, 33, 957, DateTimeKind.Local).AddTicks(2380)
                         },
                         new
                         {
                             Id = "ArticleDetail",
                             Body = "{\"useBlocks\": true, \"title\": \"Article Detail\"}",
-                            DateCreated = new DateTime(2021, 8, 22, 4, 6, 11, 918, DateTimeKind.Local).AddTicks(7005)
+                            DateCreated = new DateTime(2021, 8, 26, 22, 39, 33, 957, DateTimeKind.Local).AddTicks(2384)
                         },
                         new
                         {
                             Id = "FeatureLanding",
                             Body = "{\"useBlocks\": true, \"title\": \"Feature Landing\"}",
-                            DateCreated = new DateTime(2021, 8, 22, 4, 6, 11, 918, DateTimeKind.Local).AddTicks(7009)
+                            DateCreated = new DateTime(2021, 8, 26, 22, 39, 33, 957, DateTimeKind.Local).AddTicks(2387)
                         },
                         new
                         {
                             Id = "Error",
                             Body = "{\"useBlocks\": true, \"title\": \"Error\"}",
-                            DateCreated = new DateTime(2021, 8, 22, 4, 6, 11, 918, DateTimeKind.Local).AddTicks(7014)
+                            DateCreated = new DateTime(2021, 8, 26, 22, 39, 33, 957, DateTimeKind.Local).AddTicks(2390)
                         },
                         new
                         {
                             Id = "Search",
                             Body = "{\"useBlocks\": true, \"title\": \"Search\"}",
-                            DateCreated = new DateTime(2021, 8, 22, 4, 6, 11, 918, DateTimeKind.Local).AddTicks(7019)
+                            DateCreated = new DateTime(2021, 8, 26, 22, 39, 33, 957, DateTimeKind.Local).AddTicks(2394)
                         },
                         new
                         {
                             Id = "SearchResults",
                             Body = "{\"useBlocks\": true, \"title\": \"Search Results\"}",
-                            DateCreated = new DateTime(2021, 8, 22, 4, 6, 11, 918, DateTimeKind.Local).AddTicks(7023)
+                            DateCreated = new DateTime(2021, 8, 26, 22, 39, 33, 957, DateTimeKind.Local).AddTicks(2396)
                         },
                         new
                         {
                             Id = "Member",
                             Body = "{\"useBlocks\": true, \"title\": \"Member\"}",
-                            DateCreated = new DateTime(2021, 8, 22, 4, 6, 11, 918, DateTimeKind.Local).AddTicks(7027)
+                            DateCreated = new DateTime(2021, 8, 26, 22, 39, 33, 957, DateTimeKind.Local).AddTicks(2399)
                         },
                         new
                         {
                             Id = "Transaction",
                             Body = "{\"useBlocks\": true, \"title\": \"Transaction\"}",
-                            DateCreated = new DateTime(2021, 8, 22, 4, 6, 11, 918, DateTimeKind.Local).AddTicks(7031)
+                            DateCreated = new DateTime(2021, 8, 26, 22, 39, 33, 957, DateTimeKind.Local).AddTicks(2402)
                         });
                 });
 
@@ -1048,7 +1142,7 @@ namespace Superjack.MultiSites.Api.Migrations
                             Culture = "en-GB",
                             DomainName = "superjack.co.uk",
                             Protocol = "https",
-                            Uuid = new Guid("6d624486-5520-4226-9e85-04fc15e24eed")
+                            Uuid = new Guid("2ee0f3c0-a4f4-40b5-a227-2f2d5450c333")
                         });
                 });
 
@@ -1106,10 +1200,10 @@ namespace Superjack.MultiSites.Api.Migrations
                         new
                         {
                             Id = 1L,
-                            DateCreated = new DateTime(2021, 8, 22, 4, 6, 11, 926, DateTimeKind.Local).AddTicks(4039),
+                            DateCreated = new DateTime(2021, 8, 26, 22, 39, 33, 963, DateTimeKind.Local).AddTicks(5076),
                             FirstName = "Stef",
-                            PasswordHash = new byte[] { 189, 173, 141, 28, 75, 18, 55, 88, 229, 171, 17, 162, 138, 22, 14, 245, 131, 187, 255, 190, 208, 79, 137, 49, 241, 107, 48, 252, 207, 226, 205, 74, 54, 250, 45, 7, 134, 212, 205, 134, 31, 164, 130, 58, 15, 85, 46, 146, 175, 250, 142, 93, 116, 66, 125, 8, 49, 182, 227, 49, 143, 19, 180, 121 },
-                            PasswordSalt = new byte[] { 188, 253, 4, 102, 241, 168, 56, 143, 82, 248, 19, 187, 208, 126, 135, 221, 63, 216, 184, 87, 179, 89, 158, 146, 253, 185, 224, 171, 217, 247, 145, 195, 115, 140, 59, 118, 235, 245, 88, 194, 35, 37, 246, 200, 21, 81, 123, 62, 7, 163, 246, 172, 250, 248, 211, 139, 3, 90, 179, 233, 9, 10, 125, 80, 167, 5, 254, 28, 99, 6, 118, 174, 37, 53, 182, 3, 197, 208, 121, 224, 115, 45, 228, 208, 145, 94, 243, 170, 234, 5, 87, 49, 243, 158, 159, 69, 97, 55, 58, 160, 37, 246, 228, 208, 133, 255, 213, 173, 3, 125, 105, 69, 83, 20, 37, 54, 198, 22, 48, 157, 241, 26, 134, 125, 118, 101, 147, 205 },
+                            PasswordHash = new byte[] { 102, 253, 151, 91, 246, 124, 31, 249, 111, 243, 101, 140, 224, 104, 177, 57, 251, 2, 250, 103, 36, 67, 216, 30, 83, 234, 198, 17, 187, 118, 52, 100, 174, 40, 59, 113, 173, 133, 3, 48, 97, 59, 239, 193, 54, 13, 198, 133, 199, 42, 181, 174, 51, 187, 196, 145, 37, 231, 32, 34, 66, 219, 183, 97 },
+                            PasswordSalt = new byte[] { 59, 238, 160, 70, 131, 240, 252, 121, 119, 38, 64, 214, 166, 160, 240, 28, 231, 84, 207, 125, 205, 145, 222, 78, 182, 38, 120, 75, 125, 116, 137, 223, 225, 180, 117, 82, 191, 96, 112, 87, 35, 46, 178, 77, 113, 121, 166, 40, 187, 116, 49, 83, 28, 16, 200, 132, 162, 79, 242, 140, 195, 131, 134, 74, 219, 228, 124, 133, 80, 76, 124, 216, 175, 53, 187, 37, 161, 196, 33, 59, 42, 218, 63, 210, 70, 70, 191, 245, 132, 138, 191, 22, 53, 36, 53, 1, 115, 116, 112, 8, 202, 35, 72, 33, 130, 23, 105, 54, 115, 223, 140, 21, 71, 248, 46, 161, 127, 248, 64, 82, 127, 61, 31, 19, 78, 141, 186, 120 },
                             Status = "Active",
                             Surname = "Cunning",
                             Username = "services@superjack.co.uk"

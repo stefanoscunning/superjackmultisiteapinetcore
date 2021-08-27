@@ -15,6 +15,10 @@ namespace Superjack.MultiSites.Api.DataAccess
     [Required]
     public long Id { get; set; }
 
+    [Column("Uuid")]
+    [Required]
+    public Guid Uuid { get; set; }
+
     [Column("PageId")]
     [Required]
     public long PageId { get; set; }
@@ -30,7 +34,10 @@ namespace Superjack.MultiSites.Api.DataAccess
     [Required]
     public long SortOrder { get; set; }
 
+    [Column("Level")]
+    public int Level { get; set; }
 
-   
+
+
   }
 }

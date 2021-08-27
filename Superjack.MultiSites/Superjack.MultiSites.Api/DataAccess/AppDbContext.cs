@@ -84,7 +84,8 @@ namespace Superjack.MultiSites.Api.DataAccess
         new Block(){Id=32, Uuid=Guid.NewGuid(),DateCreated=DateTime.Now, DateModified=DateTime.Now, BlockType="checkout", Title="Checkout", CanHaveChildren=false},
         new Block(){Id=33, Uuid=Guid.NewGuid(),DateCreated=DateTime.Now, DateModified=DateTime.Now, BlockType="search", Title="Search", CanHaveChildren=false},
         new Block(){Id=34, Uuid=Guid.NewGuid(),DateCreated=DateTime.Now, DateModified=DateTime.Now, BlockType="searchItem", Title="Search Item", CanHaveChildren=false},
-        new Block(){Id=35, Uuid=Guid.NewGuid(),DateCreated=DateTime.Now, DateModified=DateTime.Now, BlockType="card", Title="Card", CanHaveChildren=true}
+        new Block(){Id=35, Uuid=Guid.NewGuid(),DateCreated=DateTime.Now, DateModified=DateTime.Now, BlockType="card", Title="Card", CanHaveChildren=true},
+        new Block(){Id=36, Uuid=Guid.NewGuid(),DateCreated=DateTime.Now, DateModified=DateTime.Now, BlockType="rowContainer", Title="Row", CanHaveChildren=true}
 
 
       };
@@ -93,10 +94,9 @@ namespace Superjack.MultiSites.Api.DataAccess
 
       var blockFields = new BlockField[]
       {
-        new BlockField(){Id=1, Uuid=Guid.NewGuid(), BlockId=1, Title="numberOfColumns", DataType="int", SortOrder=0, Value="1"},
-        new BlockField(){Id=2, Uuid=Guid.NewGuid(), BlockId=2, Title="type", DataType="string", SortOrder=0, Value="button"},
-        new BlockField(){Id=3, Uuid=Guid.NewGuid(), BlockId=2, Title="text", DataType="string", SortOrder=1, Value="Click"},
-        new BlockField(){Id=4, Uuid=Guid.NewGuid(), BlockId=2, Title="class", DataType="string", SortOrder=2, Value="btn"}
+        new BlockField(){Id=1, Uuid=Guid.NewGuid(), BlockId=2, Title="type", DataType="string", SortOrder=0, Value="button"},
+        new BlockField(){Id=2, Uuid=Guid.NewGuid(), BlockId=2, Title="text", DataType="string", SortOrder=1, Value="Click"},
+        new BlockField(){Id=3, Uuid=Guid.NewGuid(), BlockId=2, Title="class", DataType="string", SortOrder=2, Value="btn"}
       };
 
       modelBuilder.Entity<BlockField>().HasData(blockFields);
@@ -130,14 +130,14 @@ namespace Superjack.MultiSites.Api.DataAccess
 
       var pages = new Page[]
       {
-        new Page(){Id=1, MetaDescription="", MetaKeywords="", PageIdentifier=pageIdentifiers[0], DateCreated=DateTime.Now, DateModified=DateTime.Now, DateScheduledPublish=DateTime.Now.Subtract(new TimeSpan(4,0,0,0,0)), DateScheduledExpiry=null, PageTypeId="Root", NavigationTitle="Home", Title="Home", ParentPageIdentifier=pageIdentifiers[0], Level=0, Route="/", SiteId=1, SortOrder=0, Draft=false, Published=true, Disabled=false, Binned=false},
-        new Page(){Id=2, MetaDescription="", MetaKeywords="", PageIdentifier=pageIdentifiers[1], DateCreated=DateTime.Now, DateModified=DateTime.Now, DateScheduledPublish=DateTime.Now, PageTypeId="StandardPage", DateScheduledExpiry=null, NavigationTitle="Portfolio", Title="Portfolio", ParentPageIdentifier=pageIdentifiers[0], Level=1, Route="/portfolio", SiteId=1, SortOrder=1, Draft=false, Published=true, Disabled=false, Binned=false},
-        new Page(){Id=3, MetaDescription="", MetaKeywords="", PageIdentifier=pageIdentifiers[2], DateCreated=DateTime.Now, DateModified=DateTime.Now, DateScheduledPublish=DateTime.Now, PageTypeId="StandardPage", DateScheduledExpiry=null, NavigationTitle="Regulatory Services", Title="Regulatory Services", ParentPageIdentifier=pageIdentifiers[1], Level=2, Route="/portfolio/regulatory-services", SiteId=1, SortOrder=0, Draft=false, Published=true, Disabled=false, Binned=false},
-        new Page(){Id=4, MetaDescription="", MetaKeywords="", PageIdentifier=pageIdentifiers[3], DateCreated=DateTime.Now, DateModified=DateTime.Now, DateScheduledPublish=DateTime.Now, PageTypeId="StandardPage", DateScheduledExpiry=null, NavigationTitle="About", Title="About", ParentPageIdentifier=pageIdentifiers[0], Level=1, Route="/about", SiteId=1, SortOrder=0, Draft=false, Published=true, Disabled=false, Binned=false},
-        new Page(){Id=5, MetaDescription="", MetaKeywords="", PageIdentifier=pageIdentifiers[4], DateCreated=DateTime.Now, DateModified=DateTime.Now, DateScheduledPublish=DateTime.Now, PageTypeId="StandardPage", DateScheduledExpiry=null, NavigationTitle="Contact", Title="Contact", ParentPageIdentifier=pageIdentifiers[0], Level=1, Route="/contact", SiteId=1, SortOrder=2, Draft=false, Published=true, Disabled=false, Binned=false},
-        new Page(){Id=6, MetaDescription="", MetaKeywords="", PageIdentifier=pageIdentifiers[0], DateCreated=DateTime.Now, DateModified=DateTime.Now, DateScheduledPublish=DateTime.Now.Subtract(new TimeSpan(3,0,0,0,0)), DateScheduledExpiry=null, PageTypeId="Root", NavigationTitle="Home", Title="Home", ParentPageIdentifier=pageIdentifiers[0], Level=0, Route="/", SiteId=1, SortOrder=0, Draft=false, Published=true, Disabled=false, Binned=false},
-        new Page(){Id=7, MetaDescription="", MetaKeywords="", PageIdentifier=pageIdentifiers[0], DateCreated=DateTime.Now, DateModified=DateTime.Now, DateScheduledPublish=DateTime.Now.Subtract(new TimeSpan(2,0,0,0,0)), DateScheduledExpiry=DateTime.Now.Subtract(new TimeSpan(1,0,0,0,0)), PageTypeId="Root", NavigationTitle="Home", Title="Home", ParentPageIdentifier=pageIdentifiers[0], Level=0, Route="/", SiteId=1, SortOrder=0, Draft=false, Published=true, Disabled=false, Binned=false},
-        new Page(){Id=8, MetaDescription="", MetaKeywords="", PageIdentifier=pageIdentifiers[0], DateCreated=DateTime.Now, DateModified=DateTime.Now, DateScheduledPublish=null, PageTypeId="Root", NavigationTitle="Home", DateScheduledExpiry=null, Title="Home", ParentPageIdentifier=pageIdentifiers[0], Level=0, Route="/", SiteId=1, SortOrder=0, Draft=true, Published=false, Disabled=false, Binned=false}
+        new Page(){Id=1, Uuid=Guid.NewGuid(), MetaDescription="", MetaKeywords="", PageIdentifier=pageIdentifiers[0], DateCreated=DateTime.Now, DateModified=DateTime.Now, DateScheduledPublish=DateTime.Now.Subtract(new TimeSpan(4,0,0,0,0)), DateScheduledExpiry=null, PageTypeId="Root", NavigationTitle="Home", Title="Home", ParentPageIdentifier=pageIdentifiers[0], Level=0, Route="/", SiteId=1, SortOrder=0, Draft=false, Published=true, Disabled=false, Binned=false},
+        new Page(){Id=2, Uuid=Guid.NewGuid(), MetaDescription="", MetaKeywords="", PageIdentifier=pageIdentifiers[1], DateCreated=DateTime.Now, DateModified=DateTime.Now, DateScheduledPublish=DateTime.Now, PageTypeId="StandardPage", DateScheduledExpiry=null, NavigationTitle="Portfolio", Title="Portfolio", ParentPageIdentifier=pageIdentifiers[0], Level=1, Route="/portfolio", SiteId=1, SortOrder=1, Draft=false, Published=true, Disabled=false, Binned=false},
+        new Page(){Id=3, Uuid=Guid.NewGuid(), MetaDescription="", MetaKeywords="", PageIdentifier=pageIdentifiers[2], DateCreated=DateTime.Now, DateModified=DateTime.Now, DateScheduledPublish=DateTime.Now, PageTypeId="StandardPage", DateScheduledExpiry=null, NavigationTitle="Regulatory Services", Title="Regulatory Services", ParentPageIdentifier=pageIdentifiers[1], Level=2, Route="/portfolio/regulatory-services", SiteId=1, SortOrder=0, Draft=false, Published=true, Disabled=false, Binned=false},
+        new Page(){Id=4, Uuid=Guid.NewGuid(), MetaDescription="", MetaKeywords="", PageIdentifier=pageIdentifiers[3], DateCreated=DateTime.Now, DateModified=DateTime.Now, DateScheduledPublish=DateTime.Now, PageTypeId="StandardPage", DateScheduledExpiry=null, NavigationTitle="About", Title="About", ParentPageIdentifier=pageIdentifiers[0], Level=1, Route="/about", SiteId=1, SortOrder=0, Draft=false, Published=true, Disabled=false, Binned=false},
+        new Page(){Id=5, Uuid=Guid.NewGuid(), MetaDescription="", MetaKeywords="", PageIdentifier=pageIdentifiers[4], DateCreated=DateTime.Now, DateModified=DateTime.Now, DateScheduledPublish=DateTime.Now, PageTypeId="StandardPage", DateScheduledExpiry=null, NavigationTitle="Contact", Title="Contact", ParentPageIdentifier=pageIdentifiers[0], Level=1, Route="/contact", SiteId=1, SortOrder=2, Draft=false, Published=true, Disabled=false, Binned=false},
+        new Page(){Id=6, Uuid=Guid.NewGuid(), MetaDescription="", MetaKeywords="", PageIdentifier=pageIdentifiers[0], DateCreated=DateTime.Now, DateModified=DateTime.Now, DateScheduledPublish=DateTime.Now.Subtract(new TimeSpan(3,0,0,0,0)), DateScheduledExpiry=null, PageTypeId="Root", NavigationTitle="Home", Title="Home", ParentPageIdentifier=pageIdentifiers[0], Level=0, Route="/", SiteId=1, SortOrder=0, Draft=false, Published=true, Disabled=false, Binned=false},
+        new Page(){Id=7, Uuid=Guid.NewGuid(), MetaDescription="", MetaKeywords="", PageIdentifier=pageIdentifiers[0], DateCreated=DateTime.Now, DateModified=DateTime.Now, DateScheduledPublish=DateTime.Now.Subtract(new TimeSpan(2,0,0,0,0)), DateScheduledExpiry=DateTime.Now.Subtract(new TimeSpan(1,0,0,0,0)), PageTypeId="Root", NavigationTitle="Home", Title="Home", ParentPageIdentifier=pageIdentifiers[0], Level=0, Route="/", SiteId=1, SortOrder=0, Draft=false, Published=true, Disabled=false, Binned=false},
+        new Page(){Id=8, Uuid=Guid.NewGuid(), MetaDescription="", MetaKeywords="", PageIdentifier=pageIdentifiers[0], DateCreated=DateTime.Now, DateModified=DateTime.Now, DateScheduledPublish=null, PageTypeId="Root", NavigationTitle="Home", DateScheduledExpiry=null, Title="Home", ParentPageIdentifier=pageIdentifiers[0], Level=0, Route="/", SiteId=1, SortOrder=0, Draft=true, Published=false, Disabled=false, Binned=false}
 
       };
 
@@ -145,14 +145,21 @@ namespace Superjack.MultiSites.Api.DataAccess
 
       var pageBlocks = new PageBlock[]
       {
-        new PageBlock(){Id=1, PageId=1, BlockId=1, SortOrder=0}
+        new PageBlock(){Id=1, Uuid=Guid.NewGuid(), PageId=8, BlockId=36, ParentId=0, SortOrder=0, Level=0},
+        new PageBlock(){Id=2, Uuid=Guid.NewGuid(), PageId=8, BlockId=1, ParentId=1, SortOrder=0, Level=1},
+        new PageBlock(){Id=3, Uuid=Guid.NewGuid(), PageId=8, BlockId=1, ParentId=1, SortOrder=1, Level=1},
+        new PageBlock(){Id=4, Uuid=Guid.NewGuid(), PageId=8, BlockId=1, ParentId=1, SortOrder=2, Level=1},
+        new PageBlock(){Id=5, Uuid=Guid.NewGuid(), PageId=8, BlockId=2, ParentId=4, SortOrder=0, Level=2}
       };
 
       modelBuilder.Entity<PageBlock>().HasData(pageBlocks);
 
       var pageFields = new PageField[]
       {
-        new PageField(){Id=1, PageBlockId=1, FieldId=1, Title="Number of Columns", DataType="int", SortOrder=0, Value="3"}
+        new PageField(){Id=1, Uuid=Guid.NewGuid(), PageBlockId=5, FieldId=1, Title="type", DataType="string", SortOrder=0, Value="button"},
+        new PageField(){Id=2, Uuid=Guid.NewGuid(), PageBlockId=5, FieldId=2, Title="text", DataType="string", SortOrder=1, Value="Save and continue"},
+        new PageField(){Id=3, Uuid=Guid.NewGuid(), PageBlockId=5, FieldId=3, Title="class", DataType="string", SortOrder=2, Value="btn btn-success"},
+        new PageField(){Id=4, Uuid=Guid.NewGuid(), PageBlockId=5, FieldId=null, Title="icon", DataType="string", SortOrder=3, Value="fas fa-check"}
       };
 
       modelBuilder.Entity<PageField>().HasData(pageFields);

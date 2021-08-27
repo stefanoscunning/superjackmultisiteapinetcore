@@ -10,6 +10,7 @@ namespace Superjack.MultiSites.Api.Dtos
   public class PageBlockDto
   {
     public long Id { get; set; }
+    public Guid Uuid { get; set; }
     public long PageId { get; set; }
 
     public long BlockId { get; set; }
@@ -17,8 +18,11 @@ namespace Superjack.MultiSites.Api.Dtos
     public long ParentId { get; set; }
 
     public long SortOrder { get; set; }
+    public int Level { get; set; }
 
-
+    public BlockDto Block { get; set; }
+    public PageBlockDto[] Children { get; set; }
+    public PageFieldDto[] Fields { get; set; }
    
   }
 }

@@ -11,7 +11,7 @@ namespace Superjack.MultiSites.Api.Services
   {
     IEnumerable<BlockField> GetAll();
     IEnumerable<BlockField> GetAllByBlockId(long blockId);
-    BlockField GetById(long id);
+    BlockField GetById(long? id);
     BlockField GetByUuid(string uuid);
     BlockField Create(BlockField item);
     void Update(BlockField newitem);
@@ -38,7 +38,7 @@ namespace Superjack.MultiSites.Api.Services
     }
 
 
-    public BlockField GetById(long id)
+    public BlockField GetById(long? id)
     {
       return _context.BlockFields.Find(id);
     }

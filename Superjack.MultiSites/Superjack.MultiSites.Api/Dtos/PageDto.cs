@@ -10,6 +10,7 @@ namespace Superjack.MultiSites.Api.Dtos
   public class PageDto
   {
     public long Id { get; set; }
+    public Guid Uuid { get; set; }
     public string PageIdentifier { get; set; }
     public DateTime DateCreated { get; set; }
 

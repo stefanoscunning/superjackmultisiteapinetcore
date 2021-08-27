@@ -18,7 +18,7 @@ namespace Superjack.MultiSites.Api.Dtos
     public string BlockType { get; set; }
     public bool CanHaveChildren { get; set; }
 
-   
+   public BlockFieldDto[] BlockFields { get; set; }
 
    
 

@@ -15,6 +15,10 @@ namespace Superjack.MultiSites.Api.DataAccess
     [Required]
     public long Id { get; set; }
 
+    [Column("Uuid")]
+    [Required]
+    public Guid Uuid { get; set; }
+
     [Column("PageIdentifier")]
     [Required]
     public string PageIdentifier { get; set; }

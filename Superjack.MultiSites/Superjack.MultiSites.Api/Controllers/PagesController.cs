@@ -22,6 +22,10 @@ namespace Superjack.MultiSites.Api.Controllers
     private IMapper _mapper;
     private readonly ILogger<PagesController> _logger;
     private IPageService _service;
+    private IPageBlockService _pageBlockService;
+    private IBlockService _blockService;
+    private IBlockFieldService _blockFieldService;
+    private IPageFieldService _pageFieldService;
 
     public PagesController(IMapper mapper, ILogger<PagesController> logger, IPageService service)
     {
@@ -70,6 +74,8 @@ namespace Superjack.MultiSites.Api.Controllers
 
       return Ok(pages);
     }
+
+    
 
     private PageDto[] GetNestedChildrenPages(long siteid, int level, string parentPageIdentifier)
     {
